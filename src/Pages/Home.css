@@ -1,0 +1,24 @@
+/* 
+.menuItem{
+    padding: 0;
+    margin: 10px 0 10px 10px;
+    width: 100%;
+}
+.menuItem:hover {
+    cursor: pointer;
+    color: #f68b1e;
+}
+ */
+
+ .brand:hover{
+    transform: scale(1.02);
+ }
+
+ .para p {
+    font-size: 14px;
+ }
+ .para a{
+    /* text-decoration: none; */
+    font-weight: 800;
+    color: #000
+ }

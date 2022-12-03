@@ -1,0 +1,9 @@
+.prodCard{
+    transition: 0.3s ease;
+}
+
+.prodCard:hover{
+    cursor: pointer;
+    transform: translate3d(10px, 10px, 10px);
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
