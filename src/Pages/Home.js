@@ -6,6 +6,8 @@ import { Offers } from '../Components/Offers';
 import { TopSelling } from '../Components/TopSelling';
 import {IoIosFlash} from 'react-icons/io';
 import { OneDayOffer } from '../Components/OneDayOffer';
+import Navbar from '../Components/Navbar';
+import TopNav from '../Components/TopNav';
 
 export const Home = () => {
   const [offerCards, setOfferCards] = useState([
@@ -94,6 +96,8 @@ export const Home = () => {
 
   return (
     <>
+    <TopNav/>
+    <Navbar/>
       <Main />
       <Offers offersCardsArr={offerCards}/>
       <TopSelling id={'cardContainer1'} title={<h4 className='d-flex justify-content-between px-2 py-1 align-items-center'>Top Selling Items</h4>} titleBg={'inherit'} productsCard1={productsCards}/>

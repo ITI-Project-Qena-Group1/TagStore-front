@@ -1,0 +1,11 @@
+a{
+    text-decoration: none;
+}
+.sellerSite{
+    color: #f68b1e;
+}
+
+.sellerSite:hover{
+
+    text-decoration: underline!important;
+}

@@ -76,8 +76,8 @@ export const TopSelling = (props) => {
     };
 
   return (
-    <div className='bg-black'>
-        <div className='container p-2 bg-black my-2 rounded'>
+    <div className=''>
+        <div className='container p-2 my-2 rounded'>
             <div className='row rounded p-0'>
             <div className='col-12 px-0 pb-2 bg-light rounded'>
                 {props.title}

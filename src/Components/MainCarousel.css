@@ -1,0 +1,21 @@
+/* .cBtn{
+    background-color: rgba(0,0,0,.5) !important;
+    color: #fff;
+    border-radius: 100% !important;
+    padding: 12px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border: 0;
+    width: 'fit-content' !important;
+    height: 'fit-content' !important;
+    position: 'absolute' !important;
+    top: '50%';
+    left: '100%';
+} */
+
+
+
+.cBtn:focus {
+    outline: none !important;
+  }

@@ -1,0 +1,86 @@
+.searchBar{
+    height: 40px;
+    width: 400px;
+    /* width: 100%; */
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+
+.searchInput{
+    border: 0;
+    width: 400px;
+    /* width: 100%; */
+    height: 100%;
+    outline: none;
+}
+
+.searchBtn{
+    height: 40px;
+    width: 80px;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #f68b1e;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    border-radius: 5px;
+    border: 0;
+    margin-left: 10px;
+}
+
+.generalBtn{
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #f68b1e;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    border-radius: 5px;
+    border: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #000
+}
+
+.searchBtn:hover{
+    background-color: #a85808;
+}
+
+.navBarList:hover{
+    cursor: pointer;
+}
+
+.navBarList a:hover {
+    color: #f68b1e;
+}
+
+.navBarList p:hover {
+    color: #f68b1e;;
+}
+
+
+
+.dropdownList{
+    position: absolute;
+    top: 60;
+}
+
+.dropMenu{
+    background-color: #fff;
+    padding: 15px;
+    margin: 0;
+    left: -40px;
+    list-style: none;
+    width: 250px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 15%);
+    border-radius: 4px;
+    font-weight: 400;
+    color: #282828;
+}
+
+.dropMenu li{
+    padding: 10px;
+}

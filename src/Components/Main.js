@@ -1,5 +1,6 @@
 import React from 'react'
 import './Main.css';
+import MainCarousel from '../Components/MainCarousel';
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import {CiApple, CiCircleMore} from 'react-icons/ci';
@@ -44,8 +45,8 @@ export const Main = () => {
      console.log(show);
   }
     return (
-      <div style={{fontSize: '13px'}} >
-     <div className='d-none d-md-block container rounded shadow p-2'>
+      <div style={{fontSize: '13px'}} className='mt-3'>
+     <div className='d-none d-md-block container rounded'>
         <div className='row mt-0 p-0'>
                     <div className='col-md-3 ps-1 bg-light category' style={{paddingLeft: 0}}>
                         <div className='d-none d-lg-flex flex-column justify-content-between mb-0'>
@@ -78,7 +79,7 @@ export const Main = () => {
                         </div>
                         
                     </div>
-                    {hide ? <div className='col-md p-0 rounded h-100 ms-3 bg-light'>
+                    {hide ? <div className='col-md p-0 rounded h-100 ms-4 bg-light'>
                     <Carousel variant="dark" fade>
                         <Carousel.Item>
                           <img
@@ -108,6 +109,7 @@ export const Main = () => {
                       <div className='d-none d-md-flex justify-content-center d-lg-none row p-0 rounded bg-light' style={{margin: '2.5px 0'}}>
                         <img src="https://eg.jumia.is/cms/bf-22-live-2/1152x252_-EN_copy_6-(1).png"  className='bg-light p-1 rounded' style={{maxHeight: '93px'}} alt="" />
                       </div>
+                      {/* <MainCarousel /> */}
                     </div> : 
                     show['a'] ? <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}>
                       <div className='row'>

@@ -26,8 +26,8 @@ export const Offers = (props) => {
     };
 
   return (
-    <div className='bg-black'>
-        <div className='container p-2 bg-black my-2 rounded'>
+    <div className=''>
+        <div className='container p-2  my-2 rounded'>
             <div className='row rounded p-0'>
             <div className='d-none col-12 p-0 d-md-flex flex-nowrap bg-light rounded'>
                 <button className='btn btn-block bg-light rounded-left fs-3 bg-opacity-10 cBtn' style={{width: 'fit-content'}} onClick={() => slideLeft()}><TfiArrowCircleLeft/></button>
