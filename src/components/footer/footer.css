@@ -1,0 +1,117 @@
+.bg-darker {
+    background-color: #232323;
+    color: white;
+}
+
+.bg-darke {
+    background-color: #282828;
+    color: white;
+}
+
+.f-li {
+    list-style: none;
+    font-size: 13px;
+    color: whitesmoke;
+}
+
+.f-li a {
+    color: rgb(139, 132, 132);
+    text-decoration: none;
+}
+
+.f-li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.search {
+    width: 348px !important;
+    height: 34px !important;
+}
+
+.btn-outline-light:hover {
+    border-color: #f68b1e !important;
+    color: #f68b1e !important;
+    outline: 0 !important;
+    background-color: #222 !important;
+}
+.icon:hover{
+    border-color: #f68b1e !important;
+    color: #f68b1e !important;
+    outline: 0 !important;
+    background-color: #222 !important;
+}
+
+.f-icon{
+    background-color: #f68b1e;
+}
+
+li{
+    list-style: none;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: lavender;
+    width: 20px;
+    height: 20px;
+    border-color: gray;
+    cursor: pointer;
+    display: flex;
+}
+
+input[type="checkbox"]::after{
+    font-size: 50px;
+    color: white;
+    display: none;
+}
+
+input[type="checkbox"]:checked{
+    background-color: #f68b1e;
+}
+
+input[type="checkbox"]:checked::after{
+    display: block;
+}
+
+input[type="checkbox"]:hover{
+    background-color: #f3cfab;
+}
+
+input[type="radio"]{
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: lavender;
+    width: 20px;
+    height: 20px;
+    border-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="radio"]::after{
+    font-size: 50px;
+    color: white;
+    display: none;
+}
+
+input[type="radio"]:hover{
+    background-color: #f3cfab;
+}
+
+input[type="radio"]:checked{
+    background-color: #f68b1e;
+}
+
+input[type="radio"]:checked::after{
+    display: block;
+}
+
+label{
+    margin-left: 10px;
+    margin-top: 5px;
+}
