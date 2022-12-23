@@ -3,7 +3,7 @@ import {RiPriceTagFill} from 'react-icons/ri';
 
 const TopNav = () => {
   return (
-    <div>
+    <div style={{fontSize: '12px'}}>
         <div>
             <img src="https://eg.jumia.is/cms/Dec-22/Sticky-Banner/Flash-Sale/NEW/EN_-_1170x60_.png" style={{width: '100%', backgroundColor: '#f68b1e'}} alt="" />
         </div>
