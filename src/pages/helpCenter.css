@@ -1,0 +1,130 @@
+
+  li{
+      list-style: none;
+  }
+
+  input{
+      border-radius: 25px;
+
+  }
+  .my-3{
+    color: #f90;
+  }
+  .ml-5{
+    margin-left: 3rem;
+  }
+    /* 4 Categories */
+
+    .cat-txt{
+      font-size: 0.85rem;
+      color: black;
+      
+    }
+    .cat-txt:hover{
+      
+      color: #f90;
+      
+    }
+
+    .my-3{
+      color: #f90;
+    }
+
+
+    .col-sm-2{
+    border: 0px solid transparent;
+      transition: all 0.01s ease-in-out;
+    }
+    .col-3{
+    background-color: #f3f3f3;
+
+    }
+
+    .col-sm-2:hover{
+    color: #f90;
+    text-decoration: none;
+    background: white;
+    border: 1px solid #d0d0d0;
+    }
+
+    .vertical-menu{
+      /* width: 350px; */
+      padding: 2rem 0 0 2rem;
+      font-weight: bold;
+      
+    }
+
+    .vertical-menu a {
+      /* background-color: #eee; */
+      color: black;
+      display: block;
+      padding: 12px;
+      text-decoration: none;
+      
+
+    }
+    .vertical-menu a:hover {
+      background-color: white;
+      color: #f90;
+      border-radius: 25px ;
+      border-color: #f90;
+      margin-left: 10px;
+      font-weight: 600;
+      transition: all 0.2s ;
+      
+  }
+
+
+    
+
+    /* 4 Services */
+
+  .service{
+      height: 250px; 
+      padding: 3rem;
+
+      
+    } 
+
+    .service a{
+      /* background-color: #eee; */
+      color: black;
+      font-size:large;
+      display: block; 
+      margin: 5px ;
+      text-decoration: none;
+      color: #f90;
+
+    }
+
+    .service a:hover{
+      color: rgb(160, 160, 160);
+      background-color: white;
+      
+      margin-left: 10px;
+      font-weight: 600;
+      transition: all 0.2s ;
+    }
+
+    .col-sm-3{
+      border: 0px solid transparent;
+      transition: all 0.01s ease-in-out;
+    }
+
+    .col-sm-3:hover{
+      color: #f90;
+      text-decoration: none;
+      background: white;
+      border: 1px solid #d0d0d0;
+      }
+    
+    .btn btn-light{
+      background-color: white;
+      color:#f90;
+    } 
+
+    .btn btn-light:hover{
+      color:#f90;
+    } 
+  
+    
