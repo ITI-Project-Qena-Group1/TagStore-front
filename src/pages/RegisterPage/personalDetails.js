@@ -16,6 +16,9 @@ export default function PersDetails({formData , setFormData}) {
             setFormData({...formData , dateOfBirth:evt.target.value})
             setError({...error,dateError:(evt.target.value.length == 0)?" Please type your Date of birth": dateRegex.test(evt.target.value)?"":" format must be MM/DD/YYYY"})
         }
+        if(evt.target.name === 'gender'){
+            setFormData({...formData , gender:evt.target.value})
+        }
     }
     return (
         <>
@@ -31,7 +34,7 @@ export default function PersDetails({formData , setFormData}) {
                                 </div>
                             </div>
                             <div className="input-group input-group-lg col mt-5">
-                                <select className="btn btn-light col" value={formData.gender}>
+                                <select required className="btn btn-light col" name="gender" value={formData.gender} onChange={(e)=>handleChange(e)}>
                                     <option value="none" selected>Gender</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
@@ -42,8 +45,8 @@ export default function PersDetails({formData , setFormData}) {
                                 <p className='text-danger mt-2 mx-2'>{error.dateError}</p>
                             </div>
 
-                            <div class="container mt-5 text-align-center">
-                                <input type="checkbox" id="acceptTC" name="acceptTC"/> I read and consented to the <a href="/interaction/jwBBNyXSN92SM20UjSRig/en-eg/terms-and-conditions" target="_blank">Terms and Conditions</a>
+                            <div class="container mt-5 d-flex text-align-center">
+                                <input required type="checkbox" id="acceptTC" name="acceptTC" className="mx-2"/> I read and consented to the <a href="/interaction/jwBBNyXSN92SM20UjSRig/en-eg/terms-and-conditions" target="_blank">Terms and Conditions</a>
                             </div>
                         </div>
                     </div>

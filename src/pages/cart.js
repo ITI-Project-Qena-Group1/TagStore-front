@@ -10,13 +10,13 @@ import { useSelector } from "react-redux";
 
 export default function Cart() {
 
-    const Cart = useSelector(state => state.cart);
+    const cartProducts = useSelector(state => state.cart);
     const [change, setchange] = useState([])
 
 
     useEffect(() => {
         // console.log(" item deleted ")
-    }, [Cart, change]);
+    }, [cartProducts , change]);
 
 
     function handleChange(e) {
@@ -24,16 +24,16 @@ export default function Cart() {
     }
 
     return (
-        <div className="bg-light">'
+        <div className="bg-light">
+                {/* only check cart item */}
             <div className='row'>
-
                 {
-                    Cart.map((item) => {
-                        return (<ProductCard changed={(e) => handleChange(e)} cart={true} id={item.id} poster_path={item.img} title={item.title} />)
+                    cartProducts.map((item) => {
+                        return (<ProductCard changed={(e) => handleChange(e)} Cart={true} id={item.id} image={item.image} title={item.title} />)
                     })
                 }
             </div>
-            <div className='bg-white'>
+            {cartProducts<1?<div className='bg-white'>
 
                 <div className="">
                     <div className="col-12 d-flex justify-content-center">
@@ -67,6 +67,7 @@ export default function Cart() {
                     </div>
                 </div>
             </div>
+            : cartProducts>=1&&
 
             <div className=" d-md-flex d-sm-block mt-3 justify-content-between">
                 <div className="container col-md-8 col-sm-12 mt-2 bg-white">
@@ -127,7 +128,7 @@ export default function Cart() {
                         </Button>
                     </div>
                 </div>
-            </div>
+            </div>}
         </div>
     );
 }

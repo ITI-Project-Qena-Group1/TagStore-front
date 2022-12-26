@@ -3,6 +3,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart, delFromCart } from '../redux/action/productsAction';
+import {AiFillStar, AiOutlineStar} from 'react-icons/ai'
 
 export default function ProductCard(props) {
     const cartProducts = useSelector(state => state.cart);
@@ -26,7 +27,7 @@ export default function ProductCard(props) {
     const dispatch = useDispatch()
 
     const addtocart = () => {
-        dispatch((addToCart({ id: props.id, title: props.title, img: props.image , price: props.price})))
+        dispatch((addToCart({ id: props.id, title: props.title, image: props.image , price: props.price})))
         setCart(true);
         props.changed(false)
     }
@@ -50,8 +51,8 @@ export default function ProductCard(props) {
             <Link to={`/details/${props.id}`} className="btn btn-primary m-2" > Details </Link>
         </div> */}
             <Col lg={3} md={4} sm={6}>
-                <Card className="productlist">
-                    <Card.Img variant="top" src={props.image}/>
+                <Card className="productlist mt-3" style={{height:"auto"}}>
+                    <Card.Img variant="top" src={props.image} style={{width:"100%", height:"37vh"}}/>
                     <Card.Body>
                         <Card.Title>
                             <h6 class="font-weight-semibold mb-2">
@@ -62,13 +63,47 @@ export default function ProductCard(props) {
                             <h6 class="mb-0 font-weight-semibold">{props.price} EGP</h6>
                         </Card.Text>
                         <Card.Text>
-                            <div>
-                                <i class="fa fa-star star"></i>
-                                <i class="fa fa-star star"></i>
-                                <i class="fa fa-star star"></i>
-                                <i class="fa fa-star star"></i>
-                                (43)
+                        {props.rating.rate<=1?<div>
+                                <AiFillStar style={{color:"#f68b1e"}}/>
+                                <AiOutlineStar style={{color:"gray"}}/>
+                                <AiOutlineStar style={{color:"gray"}}/>
+                                <AiOutlineStar style={{color:"gray"}}/>
+                                <AiOutlineStar style={{color:"gray"}}/>
+                                ({props.rating.count})
                             </div>
+                        :props.rating.rate<=2?<div>
+                            <AiFillStar style={{color:"#f68b1e"}}/>
+                            <AiFillStar style={{color:"#f68b1e"}}/>
+                            <AiOutlineStar style={{color:"gray"}}/>
+                            <AiOutlineStar style={{color:"gray"}}/>
+                            <AiOutlineStar style={{color:"gray"}}/>
+                            ({props.rating.count})
+                        </div>
+                        :props.rating.rate<=3?<div>
+                        <AiFillStar style={{color:"#f68b1e"}}/>
+                        <AiFillStar style={{color:"#f68b1e"}}/>
+                        <AiFillStar style={{color:"#f68b1e"}}/>
+                        <AiOutlineStar style={{color:"gray"}}/>
+                        <AiOutlineStar style={{color:"gray"}}/>
+                        ({props.rating.count})
+                        </div>
+                        :props.rating.rate<=4?<div>
+                        <AiFillStar style={{color:"#f68b1e"}}/>
+                        <AiFillStar style={{color:"#f68b1e"}}/>
+                        <AiFillStar style={{color:"#f68b1e"}}/>
+                        <AiFillStar style={{color:"#f68b1e"}}/>
+                        <AiOutlineStar style={{color:"gray"}}/>
+                        ({props.rating.count})
+                        </div>
+                        :props.rating.rate<=5 &&<div>
+                        <AiFillStar style={{color:"#f68b1e"}}/>
+                        <AiFillStar style={{color:"#f68b1e"}}/>
+                        <AiFillStar style={{color:"#f68b1e"}}/>
+                        <AiFillStar style={{color:"#f68b1e"}}/>
+                        <AiFillStar style={{color:"#f68b1e"}}/>
+                        ({props.rating.count})
+                        </div>
+                        }
                         </Card.Text>
                         <Card.Text>
                             <button onClick={cart ? delfromcart : addtocart} style={{ color: cart ? "yellow" : "white" }} type="button" class="btn bg-cart r-btn w-100"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>

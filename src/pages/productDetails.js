@@ -1,26 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { AiOutlineHeart, AiOutlineStar, AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai"
-import { RiErrorWarningFill } from "react-icons/ri"
-import { FaPaperPlane } from "react-icons/fa"
-import { GiAlliedStar } from "react-icons/gi"
-import { RiSecurePaymentLine , RiShieldStarFill } from "react-icons/ri"
-import { TbTruckDelivery , TbTruckReturn } from "react-icons/tb"
-import {FaTruckPickup} from "react-icons/fa"
+import { AiOutlineHeart, AiOutlineStar, AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai";
+import { RiErrorWarningFill } from "react-icons/ri";
+import { FaPaperPlane } from "react-icons/fa";
+import { GiAlliedStar } from "react-icons/gi";
+import { RiSecurePaymentLine , RiShieldStarFill } from "react-icons/ri";
+import { TbTruckDelivery , TbTruckReturn } from "react-icons/tb";
+import {FaTruckPickup} from "react-icons/fa";
 import { useParams } from 'react-router-dom';
 import axiosInstance from "../axiosConfig/axiosInstance";
 
-export default function ProductDetails() {
 
+export default function ProductDetails() {
     const params = useParams()
     const [product , setProduct] = useState({})
+    const [likes , setLikes] = useState({})
     
     useEffect(()=>{
         axiosInstance.get(`/products/${params.id}`).then((res)=>{
             console.log(res);
             setProduct(res.data)
         },[])
+        axiosInstance.patch(`/products/${params.id}`).then((res)=>{
+            
+        })
     })
 
     const [show, setShow] = useState(false);
@@ -34,7 +38,7 @@ export default function ProductDetails() {
                     <div className="col col-md-9">
                         <section className="d-md-flex d-sm-block bg-white">
                             <div>
-                                <img src="https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/77/710733/1.jpg?0045" style={{ width: "350px", height: "auto" }} />
+                                <img src={product.image} style={{ width: "350px", height: "auto" }} />
                             </div>
                             <div className="mt-3">
                                 <div className="d-flex">
