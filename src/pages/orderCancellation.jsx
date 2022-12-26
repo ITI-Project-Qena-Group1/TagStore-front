@@ -1,5 +1,5 @@
 import React from "react";
-import "./orderCancellation .css";
+import "./orderCancellation.css";
 
 const OrderCancellation = () => {
   return (

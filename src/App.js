@@ -1,16 +1,16 @@
 import './App.css';
 import { Home } from './Pages/Home';
 import React from 'react';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle'
-import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
+// import '@fortawesome/fontawesome-free/css/all.min.css';
+// import 'bootstrap-css-only/css/bootstrap.min.css';
+// import 'bootstrap/dist/js/bootstrap.bundle'
+// import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import './App.css';
 import { BrowserRouter as Router , Route, Routes} from 'react-router-dom';
-import MainForm from './pages/RegisterPage/mainForm';
-import Cart from './pages/cart';
-import ProductDetails from './pages/productDetails';
-import ProductList from './pages/productList';
+import MainForm from './Pages/RegisterPage/mainForm';
+import Cart from './Pages/cart';
+import ProductDetails from './Pages/productDetails';
+import ProductList from './Pages/productList';
 
 function App() {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Button, Col, Container, Row, Card } from "react-bootstrap";
-import SideNavbar from "../components/footer/sideNavbar";
-import '../pages/RegisterPage/RegisterForm.css'
+import SideNavbar from "../Components/footer/sideNavbar";
+import './RegisterPage/RegisterForm.css'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { setProducts } from "../redux/action/productsAction";

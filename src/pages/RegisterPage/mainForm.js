@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../RegisterPage/RegisterForm.css'
+import './RegisterForm.css'
 import FirstRegisterForm from './firstRegisterForm'
 import PersInfo from "./personalInformation";
 import PersDetails from "./personalDetails";
