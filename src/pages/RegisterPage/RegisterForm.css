@@ -1,0 +1,53 @@
+.r-icon{
+    color: #f68b1e;
+    font-size: 64px;
+}
+.r-btn{
+    background-color:#f68b1e ;
+    color: white;
+    font-weight: bolder;
+}
+.r-btn{
+    display: none !important ;
+}
+
+.f-btn{
+    background-color:#f68b1e ;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.face-btn{
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.l-ancor{
+    color: #f68b1e;
+    box-shadow: none;
+}
+
+.face-icon{
+    background-color: white;
+    color:#4285f4;
+    border-radius: 5px;
+    margin-right: 50px;
+    font-size: 25px;
+}
+
+.fa-star{
+    color: #fd860f;
+}
+
+.card:hover button{
+    display: inline-block !important;
+}
+
+.card:hover{
+    box-shadow: 4px 4px 4px 4px rgb(218, 213, 213) !important;
+}
+
+.form-control:focus{
+    border-color: #f68b1e;
+}
