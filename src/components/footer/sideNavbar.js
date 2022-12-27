@@ -12,7 +12,7 @@ export default function SideNavbar(props) {
 
     return (
         <>
-            <Container className=" mt-3">
+            <Container className=" mt-3 col-12">
                 <h4> <a>Category</a> </h4>
                 <div>
                     <h5> <a>{props.catProp.a}</a> </h5>
@@ -25,9 +25,7 @@ export default function SideNavbar(props) {
                         </ul>
                     </div>
                 </div>
-                
                 <hr />
-
                 <div>
                     <h6>BRAND</h6>
                     <div class="form-check">

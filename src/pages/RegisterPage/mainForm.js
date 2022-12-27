@@ -14,13 +14,14 @@ export default function MainForm() {
     const [formData, setFormData] = useState({
         email: "",
         password: "",
-        confirmPasword: "",
+        confirmPassword: "",
         firstName: "",
         middleName: "",
         lastName: "",
         perfixNumber: "",
         phoneNumber: "",
-        dateOfBirth: ""
+        dateOfBirth: "",
+        gender:""
     });
 
     const displayPage = () => {
@@ -48,11 +49,24 @@ export default function MainForm() {
                 <div className="form-container">
                     <div className="container">
                         <div className="d-flex justify-content-center mt-5">
-                            <button onClick={() => {
+                            {page < 3 ?<button onClick={() => {
                                 setPage((currentPage) => currentPage + 1)
                             }}
                                 className="btn mt-2 f-btn" style={{width:"525px"}}>Continue
+                            </button> 
+
+                            : page == 3 ? <button onClick={() => {
+                                setPage((currentPage) => currentPage + 1)
+                                console.log(formData);
+                            }}
+                                className="btn mt-2 f-btn" style={{width:"525px"}}>submit
                             </button>
+                            : page >3 && <button onClick={() => {
+                                setPage((currentPage) => currentPage + 1)
+                            }}
+                                className="btn mt-2 f-btn" style={{width:"525px"}}>Go to Home page
+                            </button>
+                            }
                         </div>
                         {page == 0 && <div className="d-flex justify-content-center mt-5" >
                             <button className="btn btn-primary face-btn" style={{width:"525px"}}>

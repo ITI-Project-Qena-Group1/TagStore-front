@@ -59,12 +59,12 @@ export default function ProductList() {
                         <div className="col-3 bg-white"> <SideNavbar className="" brandProp={brand} catProp={cat} /> </div>
 
                         <div className="col-9 mx-3 bg-white">
-                            <div className="container d-flex justify-content-between mt-3"> <h5>{cat.a}</h5> <h5>Sort by:</h5> </div>
-                             <hr /> 
-                            <Row className="mt-5" lg={5}>
+                            <div className="container d-flex justify-content-between mt-3"> <h5>{cat.a}</h5> </div>
+                            <Container> <hr /> </Container>
+                            <Row>
                                 {products.map((prd) => {
                                     return <>
-                                        <ProductCard changed={(evt) => handleChange(evt)} cart={false} key={prd.id} id={prd.id} title={prd.title} image={prd.image} price={prd.price} />
+                                        <ProductCard changed={(evt) => handleChange(evt)} cart={false} key={prd.id} id={prd.id} title={prd.title} image={prd.image} price={prd.price} rating={prd.rating} />
                                     </>
                                 })}
                             </Row>
