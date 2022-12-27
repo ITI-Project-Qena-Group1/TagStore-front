@@ -1,6 +1,8 @@
 import React, { Component, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import "./helpCenter.css";
+import Navbar from '../Components/Navbar2';
+
 
 const HelpCenter = () => {
   // const [show, setShow] = useState(false);
@@ -26,6 +28,7 @@ const HelpCenter = () => {
 
   return (
     <>
+    <Navbar/>
       <div className="container text-align-center">
         <div>
           <div className="header">

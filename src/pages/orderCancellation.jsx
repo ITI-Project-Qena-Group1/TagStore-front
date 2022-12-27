@@ -1,8 +1,11 @@
 import React from "react";
 import "./orderCancellation.css";
+import Navbar from '../Components/Navbar2';
 
 const OrderCancellation = () => {
   return (
+    <>
+    <Navbar/>
     <div className="container">
       <div className="container">
         <div className="fluid d-flex justify-content-center">
@@ -124,6 +127,7 @@ const OrderCancellation = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
