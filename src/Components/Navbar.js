@@ -2,6 +2,7 @@ import React from 'react';
 import './Navbar.css';
 import {BsSearch, BsPerson, BsBoxSeam, BsHeart, BsQuestionCircle, BsChatLeftDots, BsCart3} from 'react-icons/bs'
 import {IoIosArrowDown} from 'react-icons/io';
+import {Link} from 'react-router-dom';
 
 const Navbar = (props) => {
     const [dropMenu, setDropMenu] = React.useState(1);
@@ -75,7 +76,7 @@ const Navbar = (props) => {
             </div>
             <div className='navBarList px-1'>
             
-                <a href="" className='d-flex justify-content-between align-items-center'><BsCart3 className='mx-1' style={{fontSize: "20px", fontWeight: "700"}} /> Cart</a>
+                <Link to="/cart" className='d-flex justify-content-between align-items-center'><BsCart3 className='mx-1' style={{fontSize: "20px", fontWeight: "700"}} /> Cart</Link>
             </div>
         </div>
         </div>

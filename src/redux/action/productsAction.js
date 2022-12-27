@@ -1,16 +1,16 @@
 import axios from "axios";
 
-export function addToCart(payload) {
+export function addToCart(data) {
     return {
         type: "ADD_TO_CART",
-        payload
+        payload: data
     }
 }
 
-export function delFromCart(payload) {
+export function delFromCart(data) {
     return {
         type: "DEL_FROM_CART",
-        payload
+        payload: data
     }
 }
 
