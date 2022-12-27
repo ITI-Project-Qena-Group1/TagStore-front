@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart, delFromCart } from '../redux/action/productsAction';
 import {AiFillStar, AiOutlineStar} from 'react-icons/ai'
+import {FaCartPlus} from 'react-icons/fa';
+import './RegisterPage/RegisterForm.css';
 
 export default function ProductCard(props) {
     const cartProducts = useSelector(state => state.cart);
@@ -41,7 +43,7 @@ export default function ProductCard(props) {
     return <>
         {/* <div className="card col-md-3 m-3 col-sm-12">
             <div className="card-img-top" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500/${props.poster_path})` }}>
-                <i class="fas  fa-star fa-1x " onClick={cart ? delfromcart : addtocart} style={{ color: cart ? "yellow" : "white" }} ></i>
+                <i className="fas  fa-star fa-1x " onClick={cart ? delfromcart : addtocart} style={{ color: cart ? "yellow" : "white" }} ></i>
             </div>
             <img className="card-img-top" src={`https://image.tmdb.org/t/p/w500/${props.poster_path}`} alt="Card img" />
             <div className="card-body">
@@ -50,17 +52,23 @@ export default function ProductCard(props) {
             </div>
             <Link to={`/details/${props.id}`} className="btn btn-primary m-2" > Details </Link>
         </div> */}
-            <Col lg={3} md={4} sm={6}>
-                <Card className="productlist mt-3" style={{height:"auto"}}>
-                    <Card.Img variant="top" src={props.image} style={{width:"100%", height:"37vh"}}/>
+            <div className="mx-1" style={{width: '15rem'}}>
+                <Card className="productlist mt-3">
+                    {/* <Card.Img variant="top" src={props.image}/> */}
+                    <div className='w-100 text-center d-flex flex-column justify-content-between' style={{minHeight: '33rem'}}>
+                    <div className="w-100 d-flex jusify-items-center" >
+                        <img src={props.image} className="p-3 w-100 mx-auto" alt="" />
+                    </div>
                     <Card.Body>
+                        <div className="d-flex flex-column justify-content-between">
+                        <div>
                         <Card.Title>
-                            <h6 class="font-weight-semibold mb-2">
-                                <Link to={`/details/${props.id}`} class="text-default mb-2" data-abc="true">{props.title}</Link>
+                            <h6 className="fw-bold mb-2"  style={{width: '90%',clear: 'both', display: 'inline-block', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis'}}>
+                                <Link to={`/details/${props.id}`} className="text-dark text-decoration-none mb-2 " data-abc="true">{props.title}</Link>
                             </h6>
                         </Card.Title>
                         <Card.Text>
-                            <h6 class="mb-0 font-weight-semibold">{props.price} EGP</h6>
+                            <h6 className="mb-0 font-weight-semibold">{props.price} EGP</h6>
                         </Card.Text>
                         <Card.Text>
                         {props.rating.rate<=1?<div>
@@ -105,11 +113,14 @@ export default function ProductCard(props) {
                         </div>
                         }
                         </Card.Text>
+                        </div>
                         <Card.Text>
-                            <button onClick={cart ? delfromcart : addtocart} style={{ color: cart ? "yellow" : "white" }} type="button" class="btn bg-cart r-btn w-100"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
+                            <button onClick={cart ? delfromcart : addtocart} style={{ color: cart ? "yellow" : "white" }} type="button" className="btn bg-cart r-btn w-100"><FaCartPlus clasName="me-2 text-light"/> Add to cart</button>
                         </Card.Text>
+                        </div>
                     </Card.Body>
+                    </div>
                 </Card>
-            </Col>
+            </div>
     </>
 }

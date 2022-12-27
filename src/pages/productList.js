@@ -3,7 +3,7 @@ import Navbar from "../Components/Navbar2"
 import { useState, useEffect } from "react";
 import { Button, Col, Container, Row, Card } from "react-bootstrap";
 import SideNavbar from "../Components/footer/sideNavbar";
-import './RegisterPage/RegisterForm.css'
+import './RegisterPage/RegisterForm.css';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { setProducts } from "../redux/action/productsAction";
@@ -61,13 +61,13 @@ export default function ProductList() {
                         <div className="col-9 mx-3 bg-white">
                             <div className="container d-flex justify-content-between mt-3"> <h5>{cat.a}</h5> </div>
                             <Container> <hr /> </Container>
-                            <Row>
+                            <div className="d-flex justify-content-center p-1 flex-wrap">
                                 {products.map((prd) => {
                                     return <>
                                         <ProductCard changed={(evt) => handleChange(evt)} cart={false} key={prd.id} id={prd.id} title={prd.title} image={prd.image} price={prd.price} rating={prd.rating} />
                                     </>
                                 })}
-                            </Row>
+                            </div>
                         </div>
                     </div>
                 </div>

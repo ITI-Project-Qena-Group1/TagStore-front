@@ -32,7 +32,7 @@ export default function FirstRegisterForm({formData , setFormData}) {
                                 </div>
                             </div>
                             <div className="d-block input-group input-group-lg fr-btn col">
-                                <input type="text" className={`form-control ${(error.emailError ? "border-danger shadow-none":"shadow-none")}`} placeholder="Email" value={formData.email} name="email" onChange={(e)=>handleChange(e)}/>
+                                <input type="text" className={`form-control w-100 ${(error.emailError ? "border-danger shadow-none":"shadow-none")}`} placeholder="Email" value={formData.email} name="email" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.emailError}</p>
                             </div>
                             <div className="justify-content-center">

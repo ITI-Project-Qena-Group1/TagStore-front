@@ -3,9 +3,9 @@
     font-size: 64px;
 }
 .r-btn{
-    background-color:#f68b1e ;
-    color: white;
-    font-weight: bolder;
+    background-color:#f68b1e !important;
+    color: white !important;
+    font-weight: bolder !important;
 }
 .r-btn{
     display: none !important ;
