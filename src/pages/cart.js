@@ -7,6 +7,7 @@ import { AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai"
 import { RiErrorWarningFill } from "react-icons/ri"
 import ProductCard from "./productCard";
 import { useSelector } from "react-redux";
+import Navbar from "../Components/Navbar2";
 
 export default function Cart() {
 
@@ -24,7 +25,9 @@ export default function Cart() {
     }
 
     return (
-        <div className="bg-light">'
+        <>
+        <Navbar/>
+        <div className="bg-light container mt-4">
             <div className='row'>
 
                 {
@@ -129,6 +132,7 @@ export default function Cart() {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 

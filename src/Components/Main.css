@@ -1,19 +1,31 @@
 
 .menuItem{
-    padding: 0;
+    /* padding: 0;
     margin: 2.75% 0 2.75% 12px;
-    width: 100%;
+    width: 100%; */
     text-decoration: none;
     color: black;
 }
 
 .menuItem-md{
-    padding: 0;
+    /* padding: 0;
     margin: 1% 0 1% 12px;
-    width: 100%;
+    width: 100%; */
     text-decoration: none;
     color: black;
 }
+
+.catMenuXl{
+    height: 465px!important;
+}
+
+.catMenuLg{
+    height: 390px!important;
+}
+.catMenuMd{
+    height: 295px!important;
+}
+
 .menuItem:hover {
     /* cursor: pointer; */
     color: #f68b1e;

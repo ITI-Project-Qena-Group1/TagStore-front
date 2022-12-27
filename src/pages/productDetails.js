@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import mainNavbar from "../Components/Navbar2"
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { AiOutlineHeart, AiOutlineStar, AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai"
@@ -29,7 +30,8 @@ export default function ProductDetails() {
 
     return (
         <>
-            <div className="bg-light">
+        <mainNavbar />
+            <div className="bg-light container">
                 <div className="d-md-flex d-sm-block">
                     <div className="col col-md-9">
                         <section className="d-md-flex d-sm-block bg-white">

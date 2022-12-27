@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../Components/Navbar2"
 import { useState, useEffect } from "react";
 import { Button, Col, Container, Row, Card } from "react-bootstrap";
 import SideNavbar from "../Components/footer/sideNavbar";
@@ -50,16 +51,17 @@ export default function ProductList() {
     }
 
     return (
-        <>
-            <div className="bg-light">
+        <>  
+            <Navbar/>
+            <div className="bg-light container">
                 <div className="container-fluid">
                     <div className="container-fluid mt-4 d-flex justify-content-evenly">
                         <div className="col-3 bg-white"> <SideNavbar className="" brandProp={brand} catProp={cat} /> </div>
 
                         <div className="col-9 mx-3 bg-white">
                             <div className="container d-flex justify-content-between mt-3"> <h5>{cat.a}</h5> <h5>Sort by:</h5> </div>
-                            <Container> <hr /> </Container>
-                            <Row className="mt-50" lg={5}>
+                             <hr /> 
+                            <Row className="mt-5" lg={5}>
                                 {products.map((prd) => {
                                     return <>
                                         <ProductCard changed={(evt) => handleChange(evt)} cart={false} key={prd.id} id={prd.id} title={prd.title} image={prd.image} price={prd.price} />

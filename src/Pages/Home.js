@@ -1,7 +1,7 @@
 import React from 'react'
 import './Home.css';
 import { useState } from 'react';
-import { Main } from '../Components/Main';
+import { Main } from '../Components/Main2';
 import { Offers } from '../Components/Offers';
 import { TopSelling } from '../Components/TopSelling';
 import {IoIosFlash} from 'react-icons/io';
@@ -81,6 +81,8 @@ export const Home = () => {
     }
 
 ])
+
+  const [liveChatDiv, setLiveChatDiv] = useState(false);
   const [showBtn, setShowBtn] = useState(true);
   const [paraHeight, setParaHeight] = useState('400px')
 
@@ -96,7 +98,7 @@ export const Home = () => {
 
   return (
     <>
-    <TopNav/>
+    <TopNav setLiveChatDiv={setLiveChatDiv}/>
     <Navbar/>
       <Main />
       <Offers offersCardsArr={offerCards}/>
@@ -247,6 +249,9 @@ export const Home = () => {
         </div>
         {showBtn?<h6 className='d-md-none text-center mt-1' style={{cursor: 'pointer'}} onClick={()=>showMore()}>show more</h6>:
         <h6 className='d-md-none text-center mt-2' style={{cursor: 'pointer'}} onClick={()=>showLess()}>show Less</h6>}
+        {liveChatDiv && <div style={{width: '40%', height: '80%', position: 'fixed', bottom: '0', right: '8%', zIndex: '1000', backgroundColor: '#fff'}}>
+          live chat div
+        </div>}
       </div>
     </>
   )

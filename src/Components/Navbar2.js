@@ -2,6 +2,9 @@ import React from 'react';
 import './Navbar.css';
 import {BsSearch, BsPerson, BsBoxSeam, BsHeart, BsQuestionCircle, BsChatLeftDots, BsCart3} from 'react-icons/bs'
 import {IoIosArrowDown} from 'react-icons/io';
+import {BiMenu} from 'react-icons/bi';
+import {GrFormClose} from 'react-icons/gr';
+import {Main} from '../Components/Main'
 
 const Navbar = (props) => {
     const [dropMenu, setDropMenu] = React.useState(1);
@@ -11,10 +14,15 @@ const Navbar = (props) => {
     function openHelpMenu(){
         dropMenu!==3?setDropMenu(3):setDropMenu(1);
     }
+    const [catMenu, showCatMenu] = React.useState(false);
   return (
     <div className='sticky-top bg-light py-2'>
         <div className='container d-flex justify-content-between align-items-center'>
-        <div>
+        <div className="p-0" style={{position: 'relative'}}>
+            <button onClick={()=>{catMenu?showCatMenu(false):showCatMenu(true)}} style={{backgroundColor: 'transparent', borderRadius: '50%', width: '50px', height: '50px', padding: '10px', border: 'none', fontSize: '16px'}}>{catMenu?<GrFormClose/>:<BiMenu/>}</button>
+            {catMenu&&<div className='h-100' style={{position: 'absolute', width: '800px', minHeight: "400px"}}>
+                <Main />
+            </div>}
             <img src={require('../images/logo.png')} style={{width: '140px'}} alt="logo"/>
         </div>
         <div className='d-lg-flex d-none justify-content-between align-items-center'>
@@ -27,7 +35,7 @@ const Navbar = (props) => {
                 <button className='searchBtn'>SEARCH</button>
             </div>
         </div>
-        <div className='d-flex justify-content-between align-items-center' style={{fontSize: "16px", fontWeight: "500"}}>
+        <div className='d-flex justify-content-center align-items-center' style={{fontSize: "16px", fontWeight: "500"}}>
             <div style={{position: 'relative'}} onClick={()=>openAccountMenu()}>
 
             <div className='navBarList px-1 mt-3'>

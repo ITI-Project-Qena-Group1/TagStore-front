@@ -45,12 +45,39 @@ export const Main = () => {
      console.log(show);
   }
     return (
-    <div style={{fontSize: '13px'}} className='h-100 bg-light rounded shadow'>
+    <div style={{fontSize: '13px'}} className='mt-3'>
      <div className='d-none d-md-block container rounded'>
         <div className='row mt-0 p-0'>
                     <div className='col-md-3 ps-1 bg-light category' style={{paddingLeft: 0}}>
-                   
-                        <div className='d-none d-md-flex flex-column justify-content-between p-3 mb-0 catMenuLg'>
+                    <div className='d-none d-xl-flex flex-column justify-content-between p-3 mb-0 catMenuXl'>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}><CiApple/> Supermarket</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('b')} onMouseOut={() => hideSec('b')}><GiPoloShirt/> Fashion</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('c')} onMouseOut={() => hideSec('c')}><GiLipstick/> Health & Beauty</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('d')} onMouseOut={() => hideSec('d')}><MdChildCare/> Baby Products</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('e')} onMouseOut={() => hideSec('e')}><TfiMobile/> Phones & Tablets</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('f')} onMouseOut={() => hideSec('f')}><AiOutlineHome/> Home & Office</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('g')} onMouseOut={() => hideSec('g')}><FiAirplay/> Electronics</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('h')} onMouseOut={() => hideSec('h')}><SlScreenDesktop/> Computing</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('i')} onMouseOut={() => hideSec('i')}><CgGym/> Sporting Goods</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('j')} onMouseOut={() => hideSec('j')}><IoGameControllerOutline/> Gaming</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('k')} onMouseOut={() => hideSec('k')}><AiOutlineCar/> Automobile</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('l')} onMouseOut={() => hideSec('l')}><CiCircleMore/> Other Categories</a>
+                        </div>
+                        <div className='d-none d-lg-flex d-xl-none flex-column justify-content-between p-3 mb-0 catMenuLg'>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}><CiApple/> Supermarket</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('b')} onMouseOut={() => hideSec('b')}><GiPoloShirt/> Fashion</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('c')} onMouseOut={() => hideSec('c')}><GiLipstick/> Health & Beauty</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('d')} onMouseOut={() => hideSec('d')}><MdChildCare/> Baby Products</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('e')} onMouseOut={() => hideSec('e')}><TfiMobile/> Phones & Tablets</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('f')} onMouseOut={() => hideSec('f')}><AiOutlineHome/> Home & Office</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('g')} onMouseOut={() => hideSec('g')}><FiAirplay/> Electronics</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('h')} onMouseOut={() => hideSec('h')}><SlScreenDesktop/> Computing</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('i')} onMouseOut={() => hideSec('i')}><CgGym/> Sporting Goods</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('j')} onMouseOut={() => hideSec('j')}><IoGameControllerOutline/> Gaming</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('k')} onMouseOut={() => hideSec('k')}><AiOutlineCar/> Automobile</a>
+                          <a href='#' className='menuItem' onMouseOver={() => showSec('l')} onMouseOut={() => hideSec('l')}><CiCircleMore/> Other Categories</a>
+                        </div>
+                        <div className='d-none d-md-flex d-lg-none flex-column justify-content-between p-3 mb-0 catMenuMd'>
                           <a href='#' className='menuItem-md' onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}><CiApple/> Supermarket</a>
                           <a href='#' className='menuItem-md' onMouseOver={() => showSec('b')} onMouseOut={() => hideSec('b')}><GiPoloShirt/> Fashion</a>
                           <a href='#' className='menuItem-md' onMouseOver={() => showSec('c')} onMouseOut={() => hideSec('c')}><GiLipstick/> Health & Beauty</a>
@@ -66,7 +93,38 @@ export const Main = () => {
                         </div>
                         
                     </div>
-                    {hide ? ''
+                    {hide ? <div className='col-md p-0 rounded h-100 ms-4 bg-light' style={{height: '200px'}}>
+                     {/* <Carousel variant="dark" fade>
+                        <Carousel.Item>
+                          <img
+                            className="w-100 rounded"
+                            src="https://eg.jumia.is/cms/bf-22-live-2/brand-day/AEO/Floor2/AEO_-_General__-Desktop-EN_-(1).png"
+                            alt="First slide"
+                          />
+    
+                        </Carousel.Item>
+                        <Carousel.Item>
+                          <img
+                            className="w-100 rounded"
+                            src="https://eg.jumia.is/cms/bf-22-live-2/OPT-17/Men&Women/Blue/Sweatshirt_&_Jackets_-Desktop-EN_.png"
+                            alt="Second slide"
+                          />
+    
+                        </Carousel.Item>
+                        <Carousel.Item>
+                          <img
+                            className="w-100 rounded"
+                            src="https://eg.jumia.is/cms/bf-22-live-2/OPT-24/Lenovo/Blue/Lenovo----Desktop-EN_.png"
+                            alt="Third slide"
+                          />
+    
+                        </Carousel.Item>
+                      </Carousel> */}
+                       {/* <div className='d-none d-md-flex justify-content-center d-lg-none row p-0 rounded bg-light' style={{margin: '2.5px 0'}}>
+                        <img src="https://eg.jumia.is/cms/bf-22-live-2/1152x252_-EN_copy_6-(1).png"  className='bg-light p-1 rounded' style={{maxHeight: '93px'}} alt="" />
+                       </div> */}
+                       <MainCarousel />
+                       </div>
                      : 
                     show['a'] ? <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}>
                       <div className='row d-lg-none'  style={{fontSize: '10px'}} >
