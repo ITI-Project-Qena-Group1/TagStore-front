@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export function addToCart(data) {
     return {
         type: "ADD_TO_CART",

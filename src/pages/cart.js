@@ -6,7 +6,7 @@ import { MdDeleteOutline } from "react-icons/md"
 import { AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai"
 import { RiErrorWarningFill } from "react-icons/ri"
 import ProductCard from "./productCard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../Components/Navbar2";
 
 export default function Cart() {
@@ -28,30 +28,19 @@ export default function Cart() {
         <>
         <Navbar/>
         <div className="bg-light container mt-4">
-            <div className='row'>
-                {
-                    cartProducts.map((item) => {
-                        return (<ProductCard changed={(e) => handleChange(e)} Cart={true} id={item.id} image={item.image} title={item.title} />)
-                    })
-                }
-            </div>
             {cartProducts<1?<div className='bg-white'>
-
                 <div className="">
                     <div className="col-12 d-flex justify-content-center">
                         <img src="https://www.jumia.com.eg/assets_he/images/cart.668e6453.svg" alt="" />
                     </div>
-
                 </div>
                 <div className="row p-3">
                     <div className="col-12 justify-content-center d-flex text-muted">
                         <h2>EMPTY CART</h2>
                     </div>
-
                 </div>
                 <div className="row mt-3 ">
                     <div className="col-12 d-flex justify-content-center">
-
                         <Button
                             type="button"
                             style={{
@@ -69,28 +58,28 @@ export default function Cart() {
                     </div>
                 </div>
             </div>
-            : cartProducts>=1&&
-
+            :
             <div className=" d-md-flex d-sm-block mt-3 justify-content-between">
                 <div className="container col-md-8 col-sm-12 mt-2 bg-white">
-                    <h3>Cart (1)</h3>
+                    <h3>Cart ({cartProducts.length})</h3>
                     <hr />
-                    <div className="cartItems">
+                    {cartProducts.map((item)=>{
+                        return (<div className="cartItems">
                         <div className="d-md-flex d-sm-block justify-content-between">
                             <div className="col-10" style={{ fontSize: "16px", wordWrap: "break-word", OTextOverflow: "ellipsis", }}>
                                 <div className="d-flex">
                                     <div className="">
                                         <div className="d-flex">
-                                            <div className="col-3 ">
-                                                <img src="https://eg.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/77/710733/1.jpg?0045" width="90" alt="..." className="w-100 d-block" />
+                                            <div className="col-3">
+                                                <img src={item.image} className="w-100 d-block" />
                                             </div>
                                             <div >
                                                 {" "}
                                                 <Link style={{ textDecoration: 'none', color: 'black' }}>
-                                                    XIAOMI 11T Pro - 8GB RAM - 256GB - Meteorite Gray
+                                                    {item.title}
                                                 </Link>
                                                 <div className="mt-3" style={{ fontSize: "1.25rem", fontWeight: "bolder" }}>
-                                                    EGP 15.999
+                                                    {item.price}
                                                 </div>
                                             </div>
                                         </div>
@@ -108,7 +97,8 @@ export default function Cart() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>)
+                    })}
                 </div>
                 <div className="container col-md-3 col-sm-12 bg-white mt-2">
                     <h5>CART SUMMARY</h5>
@@ -119,7 +109,7 @@ export default function Cart() {
                         </div>
                         <div>
                             <p style={{ fontWeight: "bold" }}>
-                                EGP<span> 15.999</span>
+                                EGP<span> {cartProducts.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)}</span>
                             </p>
                         </div>
                     </div>
