@@ -88,7 +88,7 @@ const MainCarousel = () => {
             {/* {carouselAuto()} */}
             <div className='row p-0' style={{borderRadius: '5px'}}>
             <div className='col-12 d-flex flex-nowrap bg-light p-0' style={{position: 'relative', borderRadius: '5px'}}>
-                <img src={offerCards[carouselImgNo]} className=" col-12 imgAd" alt="" style={{borderRadius: '5px'}}/>
+                <img src={offerCards[carouselImgNo]} className=" col-12 imgAd img-fluid" alt="" style={{borderRadius: '5px'}}/>
                 <div style={{position: 'absolute', top: '90%', left: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     <button style={{width: '7px', height: '7px', padding: '5px', margin: '0 5px', borderRadius: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', border: '0', backgroundColor: `${btncolor.img1}`}} onClick={()=>selectCarouselImg1()}></button>
                     <button style={{width: '7px', height: '7px', padding: '5px', margin: '0 5px', borderRadius: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', border: '0', backgroundColor: `${btncolor.img2}`}} onClick={()=>selectCarouselImg2()}></button>

@@ -15,6 +15,7 @@
     color: black;
 }
 
+
 .catMenuXl{
     height: 465px!important;
 }
@@ -24,6 +25,24 @@
 }
 .catMenuMd{
     height: 295px!important;
+}
+
+@media only screen and (min-width: 1200px) {
+    .catMenuXl{
+        height: 465px!important;
+    }
+  }
+
+@media only screen and (min-width: 1400px) {
+    .catMenuXl{
+        height: 537px!important;
+    }
+  }
+
+@media only screen and (min-width: 1600px) {
+.catMenuXl{
+    height: 630px!important;
+}
 }
 
 .menuItem:hover {

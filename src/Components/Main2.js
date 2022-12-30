@@ -49,7 +49,7 @@ export const Main = () => {
      <div className='d-none d-md-block container rounded'>
         <div className='row mt-0 p-0'>
                     <div className='col-md-3 ps-1 bg-light category' style={{paddingLeft: 0}}>
-                    <div className='d-none d-xl-flex flex-column justify-content-between p-3 mb-0 catMenuXl'>
+                      <div className='d-none d-xl-flex flex-column justify-content-between p-3 mb-0 catMenuXl'>
                           <a href='#' className='menuItem' onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}><CiApple/> Supermarket</a>
                           <a href='#' className='menuItem' onMouseOver={() => showSec('b')} onMouseOut={() => hideSec('b')}><GiPoloShirt/> Fashion</a>
                           <a href='#' className='menuItem' onMouseOver={() => showSec('c')} onMouseOut={() => hideSec('c')}><GiLipstick/> Health & Beauty</a>
@@ -126,7 +126,7 @@ export const Main = () => {
                        <MainCarousel />
                        </div>
                      : 
-                    show['a'] ? <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}>
+                    show['a'] ? <div className="col-md-9  p-2 bg-light rounded-end" onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}>
                       <div className='row d-lg-none'  style={{fontSize: '10px'}} >
                         <div className='col'>
                           <ul className='list-unstyled mb-0'>
@@ -250,7 +250,7 @@ export const Main = () => {
                         </di>
                       </div>
                     </div> :
-                    show['b'] ? <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('b')} onMouseOut={() => hideSec('b')}>
+                    show['b'] ? <div className="col-md-9  p-2 bg-light rounded-end" onMouseOver={() => showSec('b')} onMouseOut={() => hideSec('b')}>
                     <div className='row d-lg-none'  style={{fontSize: '10px'}}>
                         <div className='col'>
                           <ul className='list-unstyled mb-0'>
@@ -380,7 +380,7 @@ export const Main = () => {
                         </div>
                       </div>
                     </div> :
-                    show['c'] ? <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('c')} onMouseOut={() => hideSec('c')}>
+                    show['c'] ? <div className="col-md-9  p-2 bg-light rounded-end" onMouseOver={() => showSec('c')} onMouseOut={() => hideSec('c')}>
                       <div className='row d-lg-none' style={{fontSize: '10px'}}>
                         <div className='col'>
                           <ul className='list-unstyled mb-0'>
@@ -494,7 +494,7 @@ export const Main = () => {
                         </div>
                       </div>
                     </div> :
-                    show['d'] ? <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('d')} onMouseOut={() => hideSec('d')}>
+                    show['d'] ? <div className="col-md-9  p-2 bg-light rounded-end" onMouseOver={() => showSec('d')} onMouseOut={() => hideSec('d')}>
                       <div className='row d-lg-none' style={{fontSize: '10px'}}>
                         <div className='col'>
                           <ul className='list-unstyled mb-0'>
@@ -622,7 +622,7 @@ export const Main = () => {
                         </div>
                       </div>
                     </div> :
-                    show['e'] ? <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('e')} onMouseOut={() => hideSec('e')}>
+                    show['e'] ? <div className="col-md-9  p-2 bg-light rounded-end" onMouseOver={() => showSec('e')} onMouseOut={() => hideSec('e')}>
                       <div className='row d-lg-none' style={{fontSize: '10px'}}>
                         <div className='col'>
                           <ul className='list-unstyled mb-0'>
@@ -712,7 +712,7 @@ export const Main = () => {
                         </div>
                       </div>
                     </div> :
-                    show['f'] ? <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('f')} onMouseOut={() => hideSec('f')}>
+                    show['f'] ? <div className="col-md-9  p-2 bg-light rounded-end" onMouseOver={() => showSec('f')} onMouseOut={() => hideSec('f')}>
                       <div className='row d-lg-none' style={{fontSize: '10px'}}>
                         <div className='col'>
                           <ul className='list-unstyled mb-0'>
@@ -836,7 +836,7 @@ export const Main = () => {
                         </div>
                       </div>
                     </div> :
-                    show['g'] ? <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('g')} onMouseOut={() => hideSec('g')}>
+                    show['g'] ? <div className="col-md-9  p-2 bg-light rounded-end" onMouseOver={() => showSec('g')} onMouseOut={() => hideSec('g')}>
                       <div className='row d-lg-none' style={{fontSize: '10px'}}>
                         <div className='col'>
                           <ul className='list-unstyled mb-0'>
@@ -896,7 +896,7 @@ export const Main = () => {
                         </div>
                       </div>
                     </div> :
-                    show['h'] ? <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('h')} onMouseOut={() => hideSec('h')}>
+                    show['h'] ? <div className="col-md-9  p-2 bg-light rounded-end" onMouseOver={() => showSec('h')} onMouseOut={() => hideSec('h')}>
                       <div className='row d-lg-none' style={{fontSize: '10px'}}>
                         <div className='col'>
                           <ul className='list-unstyled mb-0'>
@@ -1002,7 +1002,7 @@ export const Main = () => {
                         </div>
                       </div>
                     </div> :
-                    show['i'] ? <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('i')} onMouseOut={() => hideSec('i')}>
+                    show['i'] ? <div className="col-md-9  p-2 bg-light rounded-end" onMouseOver={() => showSec('i')} onMouseOut={() => hideSec('i')}>
                       <div className='row d-lg-none' style={{fontSize: '10px'}}>
                         <div className='col'>
                           <ul className='list-unstyled mb-0'>
@@ -1074,7 +1074,7 @@ export const Main = () => {
                         </div>
                       </div>
                     </div> :
-                    show['j'] ? <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('j')} onMouseOut={() => hideSec('j')}>
+                    show['j'] ? <div className="col-md-9  p-2 bg-light rounded-end" onMouseOver={() => showSec('j')} onMouseOut={() => hideSec('j')}>
                       <div className='row d-lg-none' style={{fontSize: '10px'}}>
                         <div className='col'>
                           <ul className='list-unstyled mb-0'>
@@ -1154,7 +1154,7 @@ export const Main = () => {
                         </div>
                       </div>
                     </div> :
-                    show['k'] ? <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('k')} onMouseOut={() => hideSec('k')}>
+                    show['k'] ? <div className="col-md-9  p-2 bg-light rounded-end" onMouseOver={() => showSec('k')} onMouseOut={() => hideSec('k')}>
                       <div className='row d-lg-none' style={{fontSize: '10px'}}>
                         <div className='col'>
                           <ul className='list-unstyled mb-0'>
@@ -1260,7 +1260,7 @@ export const Main = () => {
                         </div>
                       </div>
                     </div> :
-                    show['l'] && <div className="col-md-9 p-2 bg-light rounded-end" onMouseOver={() => showSec('l')} onMouseOut={() => hideSec('l')}>
+                    show['l'] && <div className="col-md-9  p-2 bg-light rounded-end" onMouseOver={() => showSec('l')} onMouseOut={() => hideSec('l')}>
                       <div className='row d-lg-none' style={{fontSize: '10px'}}>
                         <div className='col'>
                           <ul className='list-unstyled mb-0'>
@@ -1364,6 +1364,10 @@ export const Main = () => {
                         </div>
                       </div>
                     </div>}
+                    {/* <div className='d-none d-xl-flex flex-column justify-content-center align-items-center ps-1 col-xl-2'>
+                      <img src='https://eg.jumia.is/cms/Dec-22/Teasers/NEW/Artboard-1-copy-2-1.png' className='img-fluid rounded p-1' alt='ads'/>
+                      <img src='https://eg.jumia.is/cms/Dec-22/Teasers/Artboard_1_copy_2-3.png' className='img-fluid rounded p-1' alt='ads'/>
+                    </div> */}
   </div>
       </div>
       <div className='d-flex d-md-none container p-1 rounded bg-light' style={{overflowX: 'scroll'}}>
