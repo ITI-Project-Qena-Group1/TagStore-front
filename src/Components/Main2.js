@@ -12,8 +12,27 @@ import {SlScreenDesktop} from 'react-icons/sl';
 import {CgGym} from 'react-icons/cg';
 import {IoGameControllerOutline} from 'react-icons/io5';
 import {AiOutlineHome, AiOutlineCar} from 'react-icons/ai';
+import langContext from '../context/LangContext';
+import { Link } from 'react-router-dom';
 
 export const Main = () => {
+  const value = React.useContext(langContext);
+  let { selectedLang } = value.state;
+  let {
+    Category1,
+    Category2,
+    Category3,
+    Category4,
+    Category5,
+    Category6,
+    Category7,
+    Category8,
+    Category9,
+    Category10,
+    Category11,
+    Category12,
+  } = value.state.lang;
+  
   const [hide, setHide] = useState(true)
   const [show, setShow] = useState({
     a:false,
@@ -47,49 +66,49 @@ export const Main = () => {
     return (
     <div style={{fontSize: '13px'}} className='mt-3'>
      <div className='d-none d-md-block container rounded'>
-        <div className='row mt-0 p-0'>
+        <div className='row mt-0 p-0' {...(selectedLang=='en'? {dir: 'ltr'}:{dir:'rtl'})}>
                     <div className='col-md-3 ps-1 bg-light category' style={{paddingLeft: 0}}>
                       <div className='d-none d-xl-flex flex-column justify-content-between p-3 mb-0 catMenuXl'>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}><CiApple/> Supermarket</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('b')} onMouseOut={() => hideSec('b')}><GiPoloShirt/> Fashion</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('c')} onMouseOut={() => hideSec('c')}><GiLipstick/> Health & Beauty</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('d')} onMouseOut={() => hideSec('d')}><MdChildCare/> Baby Products</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('e')} onMouseOut={() => hideSec('e')}><TfiMobile/> Phones & Tablets</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('f')} onMouseOut={() => hideSec('f')}><AiOutlineHome/> Home & Office</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('g')} onMouseOut={() => hideSec('g')}><FiAirplay/> Electronics</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('h')} onMouseOut={() => hideSec('h')}><SlScreenDesktop/> Computing</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('i')} onMouseOut={() => hideSec('i')}><CgGym/> Sporting Goods</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('j')} onMouseOut={() => hideSec('j')}><IoGameControllerOutline/> Gaming</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('k')} onMouseOut={() => hideSec('k')}><AiOutlineCar/> Automobile</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('l')} onMouseOut={() => hideSec('l')}><CiCircleMore/> Other Categories</a>
+                          <Link to='/product?category=supermarket' className='menuItem' onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}><CiApple/> {Category1}</Link>
+                          <Link to='/product?category=fashion' className='menuItem' onMouseOver={() => showSec('b')} onMouseOut={() => hideSec('b')}><GiPoloShirt/> {Category2}</Link>
+                          <Link to='/product?category=health&beauty' className='menuItem' onMouseOver={() => showSec('c')} onMouseOut={() => hideSec('c')}><GiLipstick/> {Category3}</Link>
+                          <Link to='/product?category=babyproducts' className='menuItem' onMouseOver={() => showSec('d')} onMouseOut={() => hideSec('d')}><MdChildCare/> {Category4}</Link>
+                          <Link to='/product?category=mobile&tablets' className='menuItem' onMouseOver={() => showSec('e')} onMouseOut={() => hideSec('e')}><TfiMobile/> {Category5}</Link>
+                          <Link to='/product?category=home&office' className='menuItem' onMouseOver={() => showSec('f')} onMouseOut={() => hideSec('f')}><AiOutlineHome/> {Category6}</Link>
+                          <Link to='/product?category=electronics' className='menuItem' onMouseOver={() => showSec('g')} onMouseOut={() => hideSec('g')}><FiAirplay/> {Category7}</Link>
+                          <Link to='/product?category=computing' className='menuItem' onMouseOver={() => showSec('h')} onMouseOut={() => hideSec('h')}><SlScreenDesktop/> {Category8}</Link>
+                          <Link to='/product?category=sportinggoods' className='menuItem' onMouseOver={() => showSec('i')} onMouseOut={() => hideSec('i')}><CgGym/> {Category9}</Link>
+                          <Link to='/product?category=gaming' className='menuItem' onMouseOver={() => showSec('j')} onMouseOut={() => hideSec('j')}><IoGameControllerOutline/> {Category10}</Link>
+                          <Link to='/product?category=automobile' className='menuItem' onMouseOver={() => showSec('k')} onMouseOut={() => hideSec('k')}><AiOutlineCar/> {Category11}</Link>
+                          <Link to='/product?categor=other' className='menuItem' onMouseOver={() => showSec('l')} onMouseOut={() => hideSec('l')}><CiCircleMore/> {Category12}</Link>
                         </div>
                         <div className='d-none d-lg-flex d-xl-none flex-column justify-content-between p-3 mb-0 catMenuLg'>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}><CiApple/> Supermarket</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('b')} onMouseOut={() => hideSec('b')}><GiPoloShirt/> Fashion</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('c')} onMouseOut={() => hideSec('c')}><GiLipstick/> Health & Beauty</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('d')} onMouseOut={() => hideSec('d')}><MdChildCare/> Baby Products</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('e')} onMouseOut={() => hideSec('e')}><TfiMobile/> Phones & Tablets</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('f')} onMouseOut={() => hideSec('f')}><AiOutlineHome/> Home & Office</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('g')} onMouseOut={() => hideSec('g')}><FiAirplay/> Electronics</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('h')} onMouseOut={() => hideSec('h')}><SlScreenDesktop/> Computing</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('i')} onMouseOut={() => hideSec('i')}><CgGym/> Sporting Goods</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('j')} onMouseOut={() => hideSec('j')}><IoGameControllerOutline/> Gaming</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('k')} onMouseOut={() => hideSec('k')}><AiOutlineCar/> Automobile</a>
-                          <a href='#' className='menuItem' onMouseOver={() => showSec('l')} onMouseOut={() => hideSec('l')}><CiCircleMore/> Other Categories</a>
+                        <Link to='/product?category=supermarket' className='menuItem' onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}><CiApple/> {Category1}</Link>
+                          <Link to='/product?category=fashion' className='menuItem' onMouseOver={() => showSec('b')} onMouseOut={() => hideSec('b')}><GiPoloShirt/> {Category2}</Link>
+                          <Link to='/product?category=health&beauty' className='menuItem' onMouseOver={() => showSec('c')} onMouseOut={() => hideSec('c')}><GiLipstick/> {Category3}</Link>
+                          <Link to='/product?category=babyproducts' className='menuItem' onMouseOver={() => showSec('d')} onMouseOut={() => hideSec('d')}><MdChildCare/> {Category4}</Link>
+                          <Link to='/product?category=mobile&tablets' className='menuItem' onMouseOver={() => showSec('e')} onMouseOut={() => hideSec('e')}><TfiMobile/> {Category5}</Link>
+                          <Link to='/product?category=home&office' className='menuItem' onMouseOver={() => showSec('f')} onMouseOut={() => hideSec('f')}><AiOutlineHome/> {Category6}</Link>
+                          <Link to='/product?category=electronics' className='menuItem' onMouseOver={() => showSec('g')} onMouseOut={() => hideSec('g')}><FiAirplay/> {Category7}</Link>
+                          <Link to='/product?category=computing' className='menuItem' onMouseOver={() => showSec('h')} onMouseOut={() => hideSec('h')}><SlScreenDesktop/> {Category8}</Link>
+                          <Link to='/product?category=sportinggoods' className='menuItem' onMouseOver={() => showSec('i')} onMouseOut={() => hideSec('i')}><CgGym/> {Category9}</Link>
+                          <Link to='/product?category=gaming' className='menuItem' onMouseOver={() => showSec('j')} onMouseOut={() => hideSec('j')}><IoGameControllerOutline/> {Category10}</Link>
+                          <Link to='/product?category=automobile' className='menuItem' onMouseOver={() => showSec('k')} onMouseOut={() => hideSec('k')}><AiOutlineCar/> {Category11}</Link>
+                          <Link to='/product?categor=other' className='menuItem' onMouseOver={() => showSec('l')} onMouseOut={() => hideSec('l')}><CiCircleMore/> {Category12}</Link>
                         </div>
                         <div className='d-none d-md-flex d-lg-none flex-column justify-content-between p-3 mb-0 catMenuMd'>
-                          <a href='#' className='menuItem-md' onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}><CiApple/> Supermarket</a>
-                          <a href='#' className='menuItem-md' onMouseOver={() => showSec('b')} onMouseOut={() => hideSec('b')}><GiPoloShirt/> Fashion</a>
-                          <a href='#' className='menuItem-md' onMouseOver={() => showSec('c')} onMouseOut={() => hideSec('c')}><GiLipstick/> Health & Beauty</a>
-                          <a href='#' className='menuItem-md' onMouseOver={() => showSec('d')} onMouseOut={() => hideSec('d')}><MdChildCare/> Baby Products</a>
-                          <a href='#' className='menuItem-md' onMouseOver={() => showSec('e')} onMouseOut={() => hideSec('e')}><TfiMobile/> Phones & Tablets</a>
-                          <a href='#' className='menuItem-md' onMouseOver={() => showSec('f')} onMouseOut={() => hideSec('f')}><AiOutlineHome/> Home & Office</a>
-                          <a href='#' className='menuItem-md' onMouseOver={() => showSec('g')} onMouseOut={() => hideSec('g')}><FiAirplay/> Electronics</a>
-                          <a href='#' className='menuItem-md' onMouseOver={() => showSec('h')} onMouseOut={() => hideSec('h')}><SlScreenDesktop/> Computing</a>
-                          <a href='#' className='menuItem-md' onMouseOver={() => showSec('i')} onMouseOut={() => hideSec('i')}><CgGym/> Sporting Goods</a>
-                          <a href='#' className='menuItem-md' onMouseOver={() => showSec('j')} onMouseOut={() => hideSec('j')}><IoGameControllerOutline/> Gaming</a>
-                          <a href='#' className='menuItem-md' onMouseOver={() => showSec('k')} onMouseOut={() => hideSec('k')}><AiOutlineCar/> Automobile</a>
-                          <a href='#' className='menuItem-md' onMouseOver={() => showSec('l')} onMouseOut={() => hideSec('l')}><CiCircleMore/> Other Categories</a>
+                        <Link to='/product?category=supermarket' className='menuItem' onMouseOver={() => showSec('a')} onMouseOut={() => hideSec('a')}><CiApple/> {Category1}</Link>
+                          <Link to='/product?category=fashion' className='menuItem' onMouseOver={() => showSec('b')} onMouseOut={() => hideSec('b')}><GiPoloShirt/> {Category2}</Link>
+                          <Link to='/product?category=health&beauty' className='menuItem' onMouseOver={() => showSec('c')} onMouseOut={() => hideSec('c')}><GiLipstick/> {Category3}</Link>
+                          <Link to='/product?category=babyproducts' className='menuItem' onMouseOver={() => showSec('d')} onMouseOut={() => hideSec('d')}><MdChildCare/> {Category4}</Link>
+                          <Link to='/product?category=mobile&tablets' className='menuItem' onMouseOver={() => showSec('e')} onMouseOut={() => hideSec('e')}><TfiMobile/> {Category5}</Link>
+                          <Link to='/product?category=home&office' className='menuItem' onMouseOver={() => showSec('f')} onMouseOut={() => hideSec('f')}><AiOutlineHome/> {Category6}</Link>
+                          <Link to='/product?category=electronics' className='menuItem' onMouseOver={() => showSec('g')} onMouseOut={() => hideSec('g')}><FiAirplay/> {Category7}</Link>
+                          <Link to='/product?category=computing' className='menuItem' onMouseOver={() => showSec('h')} onMouseOut={() => hideSec('h')}><SlScreenDesktop/> {Category8}</Link>
+                          <Link to='/product?category=sportinggoods' className='menuItem' onMouseOver={() => showSec('i')} onMouseOut={() => hideSec('i')}><CgGym/> {Category9}</Link>
+                          <Link to='/product?category=gaming' className='menuItem' onMouseOver={() => showSec('j')} onMouseOut={() => hideSec('j')}><IoGameControllerOutline/> {Category10}</Link>
+                          <Link to='/product?category=automobile' className='menuItem' onMouseOver={() => showSec('k')} onMouseOut={() => hideSec('k')}><AiOutlineCar/> {Category11}</Link>
+                          <Link to='/product?categor=other' className='menuItem' onMouseOver={() => showSec('l')} onMouseOut={() => hideSec('l')}><CiCircleMore/> {Category12}</Link>
                         </div>
                         
                     </div>

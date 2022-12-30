@@ -87,7 +87,7 @@ export const TopSelling = (props) => {
                     {props.productsCard1.map((card, index) => {
                         return(
                             <Card className='col-6 col-sm-4 col-md-3 border-0 prodCard' key={index}>
-                            <Card.Img variant="top" src={card.img} />
+                            <div className="p-3 d-flex justify-content-center align-items-center"><Card.Img variant="top" src={card.img} /></div>
                             <Card.Body>
                                 <Card.Title style={{width: '90%',clear: 'both', display: 'inline-block', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis'}}>{card.title}</Card.Title>
                                 <Card.Text className='fw-bold'>{card.price}</Card.Text>

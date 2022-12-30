@@ -12,8 +12,11 @@ import {SlScreenDesktop} from 'react-icons/sl';
 import {CgGym} from 'react-icons/cg';
 import {IoGameControllerOutline} from 'react-icons/io5';
 import {AiOutlineHome, AiOutlineCar} from 'react-icons/ai';
+import langContext from '../context/LangContext';
 
 export const Main = () => {
+  const value = React.useContext(langContext);
+  let { selectedLang } = value.state;
   const [hide, setHide] = useState(true)
   const [show, setShow] = useState({
     a:false,
