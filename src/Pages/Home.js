@@ -198,7 +198,7 @@ export const Home = () => {
         <img className='p-1 brand bg-light rounded shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UN-Deals/winter-outfits/Baby%E2%80%99s-Winter-Outfits/new/Baby_s_Winter_Outfits_-_Triple_Floor_378_px_x_252_EN_Curved.png" alt="" />
       </div>
 
-      <TopSelling id={'cardContainer1'} title={<h4 className='d-flex justify-content-between px-2 py-1 align-items-center'>Top Selling</h4>} titleBg={'inherit'} productsCard1={productsCards} />
+      <TopSelling id={'cardContainer3'} title={<h4 className='d-flex justify-content-between px-2 py-1 align-items-center'>Top Selling</h4>} titleBg={'inherit'} productsCard1={productsCards} />
 
       <h4 className='text-center mt-4 text-light'>{homePageProductsAdsTitle6}</h4>
       <div className="container d-flex justify-content-center p-1 rounded-bottom bg-light">
@@ -207,7 +207,7 @@ export const Home = () => {
         <img className='p-1 brand bg-light rounded shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UN-Deals/winter-outfits/Baby%E2%80%99s-Winter-Outfits/new/Baby_s_Winter_Outfits_-_Triple_Floor_378_px_x_252_EN_Curved.png" alt="" />
       </div>
 
-      <TopSelling id={'cardContainer1'} title={<h4 className='d-flex justify-content-between px-2 py-1 align-items-center'>Top Selling</h4>} titleBg={'inherit'} productsCard1={productsCards} />
+      <TopSelling id={'cardContainer4'} title={<h4 className='d-flex justify-content-between px-2 py-1 align-items-center'>Top Selling</h4>} titleBg={'inherit'} productsCard1={productsCards} />
 
       <h4 className='text-center mt-4 text-light'>{homePageProductsAdsTitle7}</h4>
       <div className="container d-flex justify-content-center p-1 rounded-bottom bg-light">
@@ -216,7 +216,7 @@ export const Home = () => {
         <img className='p-1 brand bg-light rounded shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UN-Deals/winter-outfits/Baby%E2%80%99s-Winter-Outfits/new/Baby_s_Winter_Outfits_-_Triple_Floor_378_px_x_252_EN_Curved.png" alt="" />
       </div>
 
-      <TopSelling id={'cardContainer1'} title={<h4 className='d-flex justify-content-between px-2 py-1 align-items-center'>Top Selling</h4>} titleBg={'inherit'} productsCard1={productsCards} />
+      <TopSelling id={'cardContainer5'} title={<h4 className='d-flex justify-content-between px-2 py-1 align-items-center'>Top Selling</h4>} titleBg={'inherit'} productsCard1={productsCards} />
 
       <h4 className='text-center mt-4 text-light'>{homePageProductsAdsTitle8}</h4>
       <div className="container d-flex justify-content-center p-1 rounded-bottom bg-light">
@@ -225,7 +225,7 @@ export const Home = () => {
         <img className='p-1 brand bg-light rounded shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UN-Deals/winter-outfits/Baby%E2%80%99s-Winter-Outfits/new/Baby_s_Winter_Outfits_-_Triple_Floor_378_px_x_252_EN_Curved.png" alt="" />
       </div>
 
-      <TopSelling id={'cardContainer1'} title={<h4 className='d-flex justify-content-between px-2 py-1 align-items-center'>Top Selling</h4>} titleBg={'inherit'} productsCard1={productsCards} />
+      <TopSelling id={'cardContainer6'} title={<h4 className='d-flex justify-content-between px-2 py-1 align-items-center'>Top Selling</h4>} titleBg={'inherit'} productsCard1={productsCards} />
 
       <h4 className='text-center mt-4 text-light'>{homePageProductsAdsTitle8}</h4>
       <div className="container d-flex justify-content-center p-1 rounded-bottom bg-light">
@@ -234,7 +234,7 @@ export const Home = () => {
         <img className='p-1 brand bg-light rounded shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UN-Deals/winter-outfits/Baby%E2%80%99s-Winter-Outfits/new/Baby_s_Winter_Outfits_-_Triple_Floor_378_px_x_252_EN_Curved.png" alt="" />
       </div>
 
-      <TopSelling id={'cardContainer1'} title={<h4 className='d-flex justify-content-between px-2 py-1 align-items-center'>Top Selling</h4>} titleBg={'inherit'} productsCard1={productsCards} />
+      <TopSelling id={'cardContainer7'} title={<h4 className='d-flex justify-content-between px-2 py-1 align-items-center'>Top Selling</h4>} titleBg={'inherit'} productsCard1={productsCards} />
 
       <div className='container bg-light rounded mb-5'>
         <div className="container d-block d-md-none bg-light p-2 para" style={{ height: paraHeight, overflowY: 'hidden' }}>
