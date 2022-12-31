@@ -79,8 +79,8 @@ export const TopSelling = (props) => {
     <div className=''>
         <div className='container p-2 my-2 rounded'>
             <div className='row rounded p-0'>
-            <div className='col-12 px-0 pb-2 bg-light rounded'>
                 {props.title}
+            <div className='col-12 px-0 pb-2 bg-light rounded'>
                 <div className='col-12 mt-1 p-0 d-flex flex-nowrap rounded position-relative'>
                 <button className='btn btn-block rounded-left fs-3 bg-opacity-10  position-absolute top-50 start-0" cBtn' style={{width: 'fit-content', zIndex: '1000'}} onClick={() => slideLeft()}><TfiArrowCircleLeft/></button>
                 <div className='d-flex overflow-hidden flex-nowrap bg-light rounded' id={props.id} style={{scrollBehavior: 'smooth'}}>

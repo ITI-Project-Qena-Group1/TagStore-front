@@ -10,6 +10,7 @@ import { setProducts } from "../redux/action/productsAction";
 import ProductCard from "./productCard";
 import axios from "axios"
 import axiosInstance from "../axiosConfig/axiosInstance";
+import { useLocation, useParams } from "react-router-dom";
 
 export default function ProductList() {
     const [brand, setBrand] = useState({
@@ -37,6 +38,9 @@ export default function ProductList() {
     const [change, setchange] = useState([])
     const [products , setProducts]  = useState([])
 
+    const location = useLocation();
+    console.log(location.search.split('=')[1]);
+
     useEffect(() => {
         axiosInstance.get("/products").then((res)=>{
             console.log(res.data);
@@ -45,6 +49,15 @@ export default function ProductList() {
             console.log(err);
         })
     },[]);
+
+    // useEffect(() => {
+    //     axiosInstance.get(`/product?category=${location.search.split('=')[1]}`).then((res)=>{
+    //         console.log(res.data);
+    //         setProducts(res.data)
+    //     }).catch((err)=>{
+    //         console.log(err);
+    //     })
+    // },[]);
 
     function handleChange(evt) {
         setchange([...change, evt])
