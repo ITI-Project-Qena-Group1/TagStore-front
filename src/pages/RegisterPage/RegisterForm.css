@@ -46,6 +46,7 @@
 
 .card:hover{
     box-shadow: 4px 4px 4px 4px rgb(218, 213, 213) !important;
+    transition: 50ms;
 }
 
 .form-control:focus{

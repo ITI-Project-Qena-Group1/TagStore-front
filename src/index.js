@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import store from './redux/store/store';
+import store from './redux/store/store.js';
 
 
 
