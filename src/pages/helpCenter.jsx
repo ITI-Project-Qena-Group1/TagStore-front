@@ -3,7 +3,6 @@ import { FaSearch } from "react-icons/fa";
 import "./helpCenter.css";
 import Navbar from '../Components/Navbar2';
 import TopNav from '../Components/TopNav';
-import Navbar from "../Components/Navbar2";
 import langContext from "../context/LangContext";
 
 const HelpCenter = () => {

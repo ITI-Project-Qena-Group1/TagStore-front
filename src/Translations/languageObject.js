@@ -148,7 +148,14 @@ let languagesObject = {
         subscribeToNewsletter:"Subscribe to our newsletter to get updates on our latest offers!",
         enterEmail:"Enter Email Adress",
         downloadApp:"DOWNLOAD JUMIA FREE APP",
-        getAccess:"Get access to exclusive offers!"
+        getAccess:"Get access to exclusive offers!",
+        welcomBack:'Welcome back',
+        LogBackIntoYourJumiaAccount:'Log back into your Jumia account',
+        phoneNumber:'phone number',
+        EnterYourPhoneNumber:'Enter Your Phone Number',
+        password:'password',
+        showpassword:'show password',
+        login:'login',
     },
 
 
@@ -319,6 +326,15 @@ let languagesObject = {
         subscribeToNewsletter:"اشترك في نشرتنا الاخباريه للحصول علي احدث العروض",
         enterEmail:"أدخل بريدك الالكتروني",
         downloadApp:"تنزيل تطبيق جوميا المجاني",
-        getAccess:"احصل علي العديد من العروض الحصرية"
+        getAccess:"احصل علي العديد من العروض الحصرية",
+        welcomBack:'مرحبا بك',
+        LogBackIntoYourJumiaAccount:'قم بتسجيل الدخول مرة أخرى إلى حساب جوميا الخاص بك',
+        phoneNumber:'رقم التليفون',
+        EnterYourPhoneNumber:'أدخل رقم هاتفك',
+        password:'كلمه السر',
+        showpassword:'عرض كلمة المرور',
+        login:'تسجيل الدخول',
     }
 }
+
+export default languagesObject

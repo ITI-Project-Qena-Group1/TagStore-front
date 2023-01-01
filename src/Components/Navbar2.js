@@ -64,7 +64,7 @@ const Navbar = (props) => {
             </div>
                 {dropMenu===2&&<ul className='dropMenu' style={{position: 'absolute'}}>
                     <li className='d-flex justify-content-center align-items-center'>
-                        <button className='generalBtn' style={{width: '100%'}}>{NavbarSubLink1}</button>
+                    <Link to='/login' className='generalBtn text-decoration-none text-center' style={{width: '100%'}}>{NavbarSubLink1}</Link>
                     </li>
                     <hr/>
                     <li>
@@ -85,13 +85,13 @@ const Navbar = (props) => {
             </div>
             {dropMenu===3&&<ul className='dropMenu' style={{position: 'absolute'}}>
                     <li>
-                    {NavbarSubLink5}
+                    <Link to='/help' className='text-decoration-none text-dark text-center'>{NavbarSubLink5}</Link>
                     </li>
                     <li>
                     {NavbarSubLink6}
                     </li>
                     <li>
-                    {NavbarSubLink7}
+                    <Link to='/sp-cancel-order' className='text-decoration-none text-dark text-center'>{NavbarSubLink7}</Link>
                     </li>
                     <li>
                     {NavbarSubLink8}
@@ -111,7 +111,7 @@ const Navbar = (props) => {
         <div className='container d-flex d-lg-none justify-content-center align-items-center'>
             <div className='searchBar w-100 d-flex justify-content-center align-items-center'>
                 <BsSearch className='mx-1' style={{color: '#aaa'}}/>
-                <input type="text" className='searchInput w-100 bg-light' name='search' placeholder= {...(selectedLang=='en'? {dir: 'ltr'}:{dir:'rtl'})} />
+                <input type="text" className='searchInput w-100 bg-light' name='search' placeholder= {NavbarSearchPlaceholder} />
             </div>
             <div className='d-flex justify-content-between align-items-center text-center'>
 

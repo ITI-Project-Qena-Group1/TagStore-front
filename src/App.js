@@ -12,6 +12,8 @@ import ProductList from './Pages/productList';
 import authContext from './context/AuthContext';
 import langContext from './context/LangContext';
 import languagesObject from './Translations/languageObject';
+import Loginform from './Pages/LoginPage/loginform';
+
 
 
 function App() {
@@ -44,6 +46,8 @@ function App() {
               <Route path='/register' exact element={<MainForm />} />
               <Route path='/help' exact element={<HelpCenter />} />
               <Route path='/sp-cancel-order' exact element={<OrderCancellation />} />
+              <Route path='/login' exact element={<Loginform />} />
+              
             </Routes>
           </Router>
         </div>
