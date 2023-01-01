@@ -150,6 +150,9 @@ let languagesObject = {
         downloadApp:"DOWNLOAD JUMIA FREE APP",
         getAccess:"Get access to exclusive offers!"
     },
+
+
+
     ar: {
         topNavSellerLink: "بيع علي تاج",
         NavbarSearchPlaceholder: "البحث عن منتجات، والعلامات التجارية والأقسام",
@@ -319,5 +322,3 @@ let languagesObject = {
         getAccess:"احصل علي العديد من العروض الحصرية"
     }
 }
-
-export default languagesObject
