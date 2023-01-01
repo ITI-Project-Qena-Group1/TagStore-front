@@ -34,7 +34,7 @@ function App() {
           setSelectedLang: setSelectedLang,
         }}
       >
-        <div className="App">
+        <div className="App" style={{backgroundColor: '#dfdfdf',}}>
           <Router>
             <Routes>
               <Route path='/' exact element={<Home />} />

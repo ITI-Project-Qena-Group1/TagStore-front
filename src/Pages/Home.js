@@ -9,6 +9,7 @@ import { OneDayOffer } from '../Components/OneDayOffer';
 import Navbar from '../Components/Navbar';
 import TopNav from '../Components/TopNav';
 import langContext from '../context/LangContext';
+import Footer from '../Components/footer/footer';
 
 export const Home = () => {
   const value = React.useContext(langContext);
@@ -276,10 +277,7 @@ export const Home = () => {
       <Main />
       <Offers offersCardsArr={selectedLang=='en' ? cardsSection.en : cardsSection.ar} />
       <TopSelling id={'cardContainer1'} title={<h4 className="d-flex justify-content-between px-2 py-1 align-items-center" {...(selectedLang=='en' ? {dir: 'ltr'} : {dir: 'rtl'})}>{homePageProductsCarouselTitle1}</h4>} titleBg={'inherit'} productsCard1={productsCards} />
-      {/* <h4 className='text-center text-light'>{homePageProductsAdsTitle3}</h4>
-      <div className='container p-2 bg-light rounded'>
-        <img className='w-100 rounded' src="https://eg.jumia.is/cms/bf-22-live-2/1152x252_-EN_copy_6-(1).png" alt="" />
-      </div> */}
+    
       <TopSelling id={'cardContainer2'} title={<div className='d-flex justify-content-between text-light px-2 py-1 rounded-top align-items-center' style={{ backgroundColor: '#e61601' }} {...(selectedLang=='en' ? {dir: 'ltr'} : {dir: 'rtl'})}>
         <h4><IoIosFlash className='text-warning' /> {homePageProductsOffersTitle1}</h4>
         <h5><span className="fs-bold">{homePageProductsOffersTime1}</span></h5>
@@ -344,84 +342,59 @@ export const Home = () => {
         })}
       </div>
 
-      {/* <h4 className={`text-center mt-2`} style={{backgroundColor:titleBg1, color:titleCo1}}>{homePageProductsAdsTitle5}</h4>
-      <div className='container bg-light rounded my-2'>
-        <div className='row'>
-          <div className='col-12 d-flex justify-content-even flex-wrap p-0'>
-            <img className='col-6' style={{ padding: '5px 2.5px 5px 5px' }} src={selectedLang=='en' ? clearanceDeal.en[0] : clearanceDeal.ar[0]} alt="" />
-            <img className='col-6' style={{ padding: '5px 5px 5px 2.5px' }} src={selectedLang=='en' ? clearanceDeal.en[1] : clearanceDeal.ar[1]} alt="" />
-          </div>
-        </div>
-      </div>
-
-      <div className='container bg-light rounded my-2'>
-        <div className='row'>
-          <div className='col-12 d-flex justify-content-center flex-wrap p-0'>
-            <img className='col-6' style={{ padding: '5px 2.5px 5px 5px' }} src={selectedLang=='en' ? clearanceDeal.en[2] : clearanceDeal.ar[2]} alt="" />
-            <img className='col-6' style={{ padding: '5px 5px 5px 2.5px' }} src={selectedLang=='en' ? clearanceDeal.en[3] : clearanceDeal.ar[3]} alt="" />
-          </div>
-        </div> */}
-      {/* </div> */}
-
-
       <h4 className='text-center mt-4 rounded-top mb-0 container' style={{backgroundColor:'#FCE7BB', color:'#282828', fontSize: "20px", padding: "10px 0"}}>{homePageProductsAdsTitle5}</h4>
       <div className="container d-flex justify-content-center p-1 rounded-bottom bg-light">
         <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src={selectedLang=='en' ? clearanceDeal.en[0] : clearanceDeal.ar[0]} alt="" />
         <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src={selectedLang=='en' ? clearanceDeal.en[1] : clearanceDeal.ar[2]} alt="" />
-        <img className='p-1 brand bg-light rounded shadow' style={{ width: "33%" }} src={selectedLang=='en' ? clearanceDeal.en[2] : clearanceDeal.ar[2]} alt="" />
+        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src={selectedLang=='en' ? clearanceDeal.en[2] : clearanceDeal.ar[2]} alt="" />
       </div>
 
       <TopSelling id={'cardContainer3'} title={<h4 className={`${selectedLang=="en"?"text-start ps-2":"text-end pe-2"} mt-4 rounded-top mb-0 container`} style={{backgroundColor:'#FCE7BB', color:'#282828', fontSize: "20px", padding: "10px 0"}}>{homePageProductsCarouselTitle3}</h4>} titleBg={'inherit'} productsCard1={productsCards} />
 
-      <h4 className='text-center mt-4 rounded-top mb-0 container' style={{backgroundColor:'#FCE7BB', color:'#282828', fontSize: "20px", padding: "10px 0"}}>{homePageProductsAdsTitle6}</h4>
+      <h4 className='text-center mt-4 rounded-top mb-0 container' style={{backgroundColor:'#E1BEE7', color:'#282828', fontSize: "20px", padding: "10px 0"}}>{homePageProductsAdsTitle6}</h4>
       <div className="container d-flex justify-content-center p-1 rounded-bottom bg-light">
-        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UNs-Triple/TB_-_0__Installments_copy_51-2.png" alt="" />
-        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UN-Deals/winter-outfits/Kids-Winter-Outfits/Kids_Winter_Outfits_-_Triple_Floor_378_px_x_252_EN_Curved.png" alt="" />
-        <img className='p-1 brand bg-light rounded shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UN-Deals/winter-outfits/Baby%E2%80%99s-Winter-Outfits/new/Baby_s_Winter_Outfits_-_Triple_Floor_378_px_x_252_EN_Curved.png" alt="" />
+        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src={selectedLang=='en' ? supermarketDeal.en[0] : supermarketDeal.ar[0]} alt="" />
+        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src={selectedLang=='en' ? supermarketDeal.en[1] : supermarketDeal.ar[1]} alt="" />
+        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src={selectedLang=='en' ? supermarketDeal.en[2] : supermarketDeal.ar[2]} alt="" />
       </div>
 
-      <TopSelling id={'cardContainer4'} title={<h4 className={`${selectedLang=="en"?"text-start ps-2":"text-end pe-2"} mt-4 rounded-top mb-0 container`} style={{backgroundColor:'#FCE7BB', color:'#282828', fontSize: "20px", padding: "10px 0"}}>{homePageProductsCarouselTitle4}</h4>} titleBg={'inherit'} productsCard1={productsCards} />
+      <TopSelling id={'cardContainer4'} title={<h4 className={`${selectedLang=="en"?"text-start ps-2":"text-end pe-2"} mt-4 rounded-top mb-0 container`} style={{backgroundColor:'#E1BEE7', color:'#282828', fontSize: "20px", padding: "10px 0"}}>{homePageProductsCarouselTitle4}</h4>} titleBg={'inherit'} productsCard1={productsCards} />
 
       <h4 className='text-center mt-4 rounded-top mb-0 container' style={{backgroundColor:'#FCE7BB', color:'#282828', fontSize: "20px", padding: "10px 0"}}>{homePageProductsAdsTitle7}</h4>
       <div className="container d-flex justify-content-center p-1 rounded-bottom bg-light">
-        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UNs-Triple/TB_-_0__Installments_copy_51-2.png" alt="" />
-        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UN-Deals/winter-outfits/Kids-Winter-Outfits/Kids_Winter_Outfits_-_Triple_Floor_378_px_x_252_EN_Curved.png" alt="" />
-        <img className='p-1 brand bg-light rounded shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UN-Deals/winter-outfits/Baby%E2%80%99s-Winter-Outfits/new/Baby_s_Winter_Outfits_-_Triple_Floor_378_px_x_252_EN_Curved.png" alt="" />
+        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src={selectedLang=='en' ? winterDeal.en[0] : winterDeal.ar[0]} alt="" />
+        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src={selectedLang=='en' ? winterDeal.en[1] : winterDeal.ar[1]} alt="" />
+        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src={selectedLang=='en' ? winterDeal.en[2] : winterDeal.ar[2]} alt="" />
       </div>
 
       <TopSelling id={'cardContainer5'} title={<h4 className={`${selectedLang=="en"?"text-start ps-2":"text-end pe-2"} mt-4 rounded-top mb-0 container`} style={{backgroundColor:'#FCE7BB', color:'#282828', fontSize: "20px", padding: "10px 0"}}>{homePageProductsCarouselTitle4}</h4>} titleBg={'inherit'} productsCard1={productsCards} />
 
-      <h4 className='text-center mt-4 rounded-top mb-0 container' style={{backgroundColor:'#FCE7BB', color:'#282828', fontSize: "20px", padding: "10px 0"}}>{homePageProductsAdsTitle8}</h4>
+      <h4 className='text-center mt-4 rounded-top mb-0 container' style={{backgroundColor:'#E1BEE7', color:'#282828', fontSize: "20px", padding: "10px 0"}}>{homePageProductsAdsTitle8}</h4>
       <div className="container d-flex justify-content-center p-1 rounded-bottom bg-light">
-        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UNs-Triple/TB_-_0__Installments_copy_51-2.png" alt="" />
-        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UN-Deals/winter-outfits/Kids-Winter-Outfits/Kids_Winter_Outfits_-_Triple_Floor_378_px_x_252_EN_Curved.png" alt="" />
-        <img className='p-1 brand bg-light rounded shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UN-Deals/winter-outfits/Baby%E2%80%99s-Winter-Outfits/new/Baby_s_Winter_Outfits_-_Triple_Floor_378_px_x_252_EN_Curved.png" alt="" />
+        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src={selectedLang=='en' ? phoneDeal.en[0] : phoneDeal.ar[0]} alt="" />
+        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src={selectedLang=='en' ? phoneDeal.en[1] : phoneDeal.ar[1]} alt="" />
+        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src={selectedLang=='en' ? phoneDeal.en[2] : phoneDeal.ar[2]} alt="" />
       </div>
+      
+      <TopSelling id={'cardContainer6'} title={<h4 className={`${selectedLang=="en"?"text-start ps-2":"text-end pe-2"} mt-4 rounded-top mb-0 container`} style={{backgroundColor:'#E1BEE7', color:'#282828', fontSize: "20px", padding: "10px 0"}}>{homePageProductsCarouselTitle4}</h4>} titleBg={'inherit'} productsCard1={productsCards} />
 
-      <TopSelling id={'cardContainer6'} title={<h4 className={`${selectedLang=="en"?"text-start ps-2":"text-end pe-2"} mt-4 rounded-top mb-0 container`} style={{backgroundColor:'#FCE7BB', color:'#282828', fontSize: "20px", padding: "10px 0"}}>{homePageProductsCarouselTitle4}</h4>} titleBg={'inherit'} productsCard1={productsCards} />
 
-      <h4 className='text-center mt-4 text-light'>{homePageProductsAdsTitle8}</h4>
-      <div className="container d-flex justify-content-center p-1 rounded-bottom bg-light">
-        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UNs-Triple/TB_-_0__Installments_copy_51-2.png" alt="" />
-        <img className='p-1 brand bg-light shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UN-Deals/winter-outfits/Kids-Winter-Outfits/Kids_Winter_Outfits_-_Triple_Floor_378_px_x_252_EN_Curved.png" alt="" />
-        <img className='p-1 brand bg-light rounded shadow' style={{ width: "33%" }} src="https://eg.jumia.is/cms/Dec-22/UN-Deals/winter-outfits/Baby%E2%80%99s-Winter-Outfits/new/Baby_s_Winter_Outfits_-_Triple_Floor_378_px_x_252_EN_Curved.png" alt="" />
-      </div>
-
-      <TopSelling id={'cardContainer7'} title={<h4 className={`${selectedLang=="en"?"text-start ps-2":"text-end pe-2"} mt-4 rounded-top mb-0 container`} style={{backgroundColor:'#FCE7BB', color:'#282828', fontSize: "20px", padding: "10px 0"}}>{homePageProductsCarouselTitle4}</h4>} titleBg={'inherit'} productsCard1={productsCards} />
 
       <div className='container bg-light rounded mb-5'>
         <div className="container d-block d-md-none bg-light p-2 para" style={{ height: paraHeight, overflowY: 'hidden' }}>
-        <div dangerouslySetInnerHTML={{ __html:homePageDescription}} />
+        <div dangerouslySetInnerHTML={{ __html:homePageDescription}} {...(selectedLang=='en' ? {dir: 'ltr'} : {dir: 'rtl'})}/>
         </div>
         <div className="container d-none d-md-block bg-light p-2 para">
-        <div dangerouslySetInnerHTML={{ __html:homePageDescription}} />
+        <div dangerouslySetInnerHTML={{ __html:homePageDescription}} {...(selectedLang=='en' ? {dir: 'ltr'} : {dir: 'rtl'})}/>
         </div>
+        
         {showBtn ? <h6 className='d-md-none text-center mt-1' style={{ cursor: 'pointer' }} onClick={() => showMore()}>show more</h6> :
           <h6 className='d-md-none text-center mt-2' style={{ cursor: 'pointer' }} onClick={() => showLess()}>show Less</h6>}
         {liveChatDiv && <div style={{ width: '40%', height: '80%', position: 'fixed', bottom: '0', right: '8%', zIndex: '1000', backgroundColor: '#fff' }}>
           live chat div
         </div>}
       </div>
+        <Footer/>
     </>
   )
 }
