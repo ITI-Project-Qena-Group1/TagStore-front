@@ -1,10 +1,12 @@
 import React from "react";
 import "./orderCancellation.css";
 import Navbar from '../Components/Navbar2';
+import TopNav from '../Components/TopNav';
 
 const OrderCancellation = () => {
   return (
     <>
+    <TopNav/>
     <Navbar/>
     <div className="container">
       <div className="container">

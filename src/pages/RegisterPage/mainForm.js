@@ -7,8 +7,7 @@ import CreatedAcc from "./CreatedAccount";
 import { GrFacebookOption } from 'react-icons/gr'
 import Password from "./password";
 import langContext from "../../context/LangContext"; 
-
-
+import langContext from "../context/LangContext";
 
 export default function MainForm() {
     const [page, setPage] = useState(0);
@@ -51,6 +50,7 @@ export default function MainForm() {
 
     return (
         <>
+
             <div className="form">
                 <div className="form-container">
                     <div className="container col-8">

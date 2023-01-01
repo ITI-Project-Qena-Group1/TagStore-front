@@ -9,6 +9,7 @@ import axiosInstance from "../axiosConfig/axiosInstance";
 import { useLocation, useParams } from "react-router-dom";
 import Footer from "../Components/footer/footer";
 import langContext from "../context/LangContext";
+import TopNav from '../Components/TopNav';
 
 export default function ProductList() {
     const [brand, setBrand] = useState({
@@ -66,6 +67,7 @@ export default function ProductList() {
 
     return (
         <>  
+            <TopNav/>
             <Navbar/>
             <div className="bg-light container">
                 <div className="container-fluid">

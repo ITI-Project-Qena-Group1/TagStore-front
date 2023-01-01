@@ -2,7 +2,7 @@ import React, { Component, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import "./helpCenter.css";
 import Navbar from '../Components/Navbar2';
-
+import TopNav from '../Components/TopNav';
 
 const HelpCenter = () => {
   // const [show, setShow] = useState(false);
@@ -28,6 +28,7 @@ const HelpCenter = () => {
 
   return (
     <>
+    <TopNav/>
     <Navbar/>
       <div className="container text-align-center">
         <div>

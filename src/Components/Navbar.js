@@ -74,7 +74,7 @@ const Navbar = (props) => {
             <div style={{position: 'relative'}} onClick={()=>openHelpMenu()}>
             <div className='navBarList px-1 mt-3'>
             
-                <p href="" className='d-flex justify-content-between align-items-center'><BsQuestionCircle className='mx-1' style={{fontSize: "20px", fontWeight: "700"}} /> {NavbarLink2} <IoIosArrowDown className='ms-2'/></p>
+                <p href="" className='d-flex justify-content-between align-items-center'><BsQuestionCircle className='mx-1' style={{fontSize: "20px", fontWeight: "700"}} /> {NavbarLink2} <IoIosArrowDown className={selectedLang=='en'? 'ms-2' : 'me-2'}/></p>
             </div>
             {dropMenu===3&&<ul className='dropMenu' style={{position: 'absolute'}}>
                     <li>

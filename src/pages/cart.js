@@ -7,6 +7,7 @@ import { AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai"
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../Components/Navbar2";
 import { delFromCart } from "../redux/action/productsAction";
+import TopNav from "../Components/TopNav"
 
 export default function Cart() {
 
@@ -32,6 +33,7 @@ export default function Cart() {
 
     return (
         <>
+        <TopNav/>
         <Navbar/>
         <div className="bg-light container mt-4">
             {cartProducts<1?<div className='bg-white'>
