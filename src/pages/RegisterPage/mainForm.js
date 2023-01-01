@@ -42,43 +42,38 @@ export default function MainForm() {
         <>
             <div className="form">
                 <div className="form-container">
-                    <div className="body">
+                    <div className="container col-8">
                         {displayPage()}
-                    </div>
-                </div>
-                <div className="form-container">
-                    <div className="container">
                         <div className="d-flex justify-content-center mt-5">
                             {page < 3 ?<button onClick={() => {
                                 setPage((currentPage) => currentPage + 1)
                             }}
-                                className="btn mt-2 f-btn" style={{width:"525px"}}>Continue
+                                className="btn mt-2 f-btn" style={{width:"480px"}}>Continue
                             </button> 
-
                             : page == 3 ? <button onClick={() => {
                                 setPage((currentPage) => currentPage + 1)
                                 console.log(formData);
                             }}
-                                className="btn mt-2 f-btn" style={{width:"525px"}}>submit
+                                className="btn mt-2 f-btn" style={{width:"480px"}}>submit
                             </button>
                             : page >3 && <button onClick={() => {
                                 setPage((currentPage) => currentPage + 1)
                             }}
-                                className="btn mt-2 f-btn" style={{width:"525px"}}>Go to Home page
+                                className="btn mt-2 f-btn" style={{width:"480px"}}>Go to Home page
                             </button>
                             }
                         </div>
                         {page == 0 && <div className="d-flex justify-content-center mt-5" >
-                            <button className="btn btn-primary face-btn" style={{width:"525px"}}>
+                            <button className="btn btn-primary face-btn" style={{width:"480px"}}>
                                 <GrFacebookOption className="face-icon"/> Log in With Facebook 
                             </button>
                         </div>}
-                    </div>
-                    {page <=3 &&<div className="mt-5 container">
-                            <div className="col d-flex justify-content-center">
-                                <p className="text-center w-50">For further support, you may visit the Help Center or contact our customer service team.</p>
+                        {page <=3 &&<div className="mt-5 container d-flex justify-content-center">
+                            <div className="col-6">
+                                <p className="text-center">For further support, you may visit the Help Center or contact our customer service team.</p>
                             </div>
                     </div>}
+                    </div>
                 </div>
             </div>
         </>

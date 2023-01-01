@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import './RegisterForm.css'
 import { GiAlliedStar } from 'react-icons/gi'
-import {GrFacebookOption} from 'react-icons/gr'
 import { Link } from "react-router-dom";
-import ProductCard from "../productList";
 
 
 
@@ -31,13 +29,13 @@ export default function FirstRegisterForm({formData , setFormData}) {
                                     <p style={{fontSize:"18px"}}>Type your email to log in or create a Jumia account.</p>
                                 </div>
                             </div>
-                            <div className="d-block input-group input-group-lg fr-btn col">
+                            <div className="d-block input-group-lg">
                                 <input type="text" className={`form-control w-100 ${(error.emailError ? "border-danger shadow-none":"shadow-none")}`} placeholder="Email" value={formData.email} name="email" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.emailError}</p>
                             </div>
                             <div className="justify-content-center">
                                 <div className="col-12">
-                                    <button className="btn mt-2 col-12 l-ancor shadow-none"><Link className="btn mt-2 col-12 l-ancor shadow-none">Log in or register with phone number</Link></button>
+                                    <button className="btn mt-2 col-12 l-ancor shadow-none "><Link className="btn mt-2 col-12 l-ancor shadow-none">Log in or register with phone number</Link></button>
                                 </div>
                             </div>
                         </div>

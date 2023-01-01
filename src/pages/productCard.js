@@ -3,7 +3,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart, delFromCart } from '../redux/action/productsAction';
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { FaCartPlus } from 'react-icons/fa';
 import './RegisterPage/RegisterForm.css';
 
@@ -106,13 +106,13 @@ export default function ProductCard(props) {
                         </div>
                     </Card.Body>
                     <div className="mb-2">
-                        {/* {cart === 0 ? <button onClick={cart ? delfromcart : addtocart} type="button" className="btn r-btn w-100"><FaCartPlus clasName="me-2 text-light" style={{ color: cart ? "black" : "white" }} /> Add to cart</button>
+                        {/* {cart <1 ? <button onClick={addtocart} type="button" className="btn r-btn w-100"><FaCartPlus clasName="me-2 text-light" /> Add to cart</button>
                         :<div>
-                        <button type="button" className="btn r-btn fs-3"> + </button>
+                        <button type="button" className="btn r-btn fs-3" onClick={addtocart}> + </button>
                         <span> 1 </span>
-                        <button type="button" className="btn r-btn fs-3"> - </button>
+                        <button type="button" className="btn r-btn fs-3" onClick={delfromcart}> - </button>
                     </div>} */}
-                    <button onClick={cart ? delfromcart : addtocart} type="button" className="btn r-btn w-100"><FaCartPlus clasName="me-2 text-light" style={{ color: cart ? "black" : "white" }} /> Add to cart</button>
+                    <button onClick={addtocart} type="button" className="btn r-btn w-100"><FaCartPlus clasName="me-2 text-light"/> Add to cart</button>
                     </div>
                 </div>
             </Card>

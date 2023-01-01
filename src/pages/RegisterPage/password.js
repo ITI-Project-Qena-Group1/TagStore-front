@@ -39,16 +39,16 @@ export default function Password({ formData, setFormData }) {
                                 </div>
                             </div>
                             <div class="input-group input-group-lg col mb-3">
-                                <input type="text" class="form-control" value={formData.email} disabled />
-                                <div class="input-group-append">
+                                <input type="text" className="form-control" value={formData.email} disabled />
+                                <div class="input-group-append input-group-lg">
                                     <Link class="input-group-text" id="basic-addon2">edit</Link>
                                 </div>
                             </div>
-                            <div className="input-group input-group-lg fr-btn mt-3 col d-block">
+                            <div className="input-group-lg fr-btn mt-3 col d-block">
                                 <input type="text" className={`form-control ${(error.passwordError ? "border-danger shadow-none":"shadow-none")}`} placeholder="Password" value={formData.password} name="password" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.passwordError}</p>
                             </div>
-                            <div className="input-group input-group-lg fr-btn mt-3 col d-block">
+                            <div className="input-group-lg fr-btn mt-3 col d-block">
                                 <input type="text" className={`form-control ${(error.confirmPasswordError ? "border-danger shadow-none":"shadow-none")}`} placeholder="Confirm Password" value={formData.confirmPassword} name="confirmPassword" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.confirmPasswordError}</p>
                             </div>

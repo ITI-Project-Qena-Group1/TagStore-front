@@ -59,27 +59,27 @@ export default function PersInfo({formData , setFormData}) {
                                     <p style={{fontSize:"18px"}}>We just need you to fill in some details.</p>
                                 </div>
                             </div>
-                            <div className="input-group input-group-lg fr-btn col d-block">
+                            <div className="input-group-lg fr-btn col d-block">
                                 <input type="text"  className={`form-control ${(error.fNameError ? "border-danger shadow-none":"shadow-none")}`} placeholder="First Name*" value={formData.firstName}  name="firstName" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.fNameError}</p>
                             </div>
-                            <div className="input-group input-group-lg fr-btn mt-4 col d-block">
+                            <div className="input-group-lg fr-btn mt-4 col d-block">
                                 <input type="text"  className={`form-control ${(error.mNameError ? "border-danger shadow-none":"shadow-none")}`} placeholder="Middle Name" value={formData.middleName} name="middleName" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.mNameError}</p>
                             </div>
 
-                            <div className="input-group input-group-lg fr-btn mt-4 col d-block">
+                            <div className="input-group-lg fr-btn mt-4 col d-block">
                                 <input type="text"  className={`form-control ${(error.lNameError ? "border-danger shadow-none":"shadow-none")}`} placeholder="Last Name*" value={formData.lastName} name="lastName" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.lNameError}</p>
                             </div>
 
                             <div className="d-flex">
-                                <div className="d-block col-3 input-group input-group-lg fr-btn mt-4 col ">
+                                <div className="d-block col-3 input-group-lg fr-btn mt-4 col ">
                                     <input type="text"  className={`form-control ${(error.perfixNumberError ? "border-danger shadow-none":"shadow-none")}`} placeholder="+20" value={formData.perfixNumber} name="perfixNumber" onChange={(e)=>handleChange(e)}/>
                                     <p className='text-danger mt-2 mx-2'>{error.perfixNumberError}</p>
                                 </div>
 
-                                <div className="d-block col-9 input-group input-group-lg fr-btn mt-4 col ">
+                                <div className="d-block col-9 input-group-lg fr-btn mt-4 col ">
                                     <input type="text"  className={`form-control ${(error.phoneNumberError ? "border-danger shadow-none":"shadow-none")}`} placeholder="Phone Number*" value={formData.phoneNumber} name="phoneNumber" onChange={(e)=>handleChange(e)}/>
                                     <p className='text-danger mt-2 mx-2'>{error.phoneNumberError}</p>
                                 </div>

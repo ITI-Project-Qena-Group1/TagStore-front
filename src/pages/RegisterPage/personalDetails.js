@@ -40,7 +40,7 @@ export default function PersDetails({formData , setFormData}) {
                                     <option value="female">Female</option>
                                 </select>
                             </div>
-                            <div className="input-group input-group-lg fr-btn mt-5 col d-block">
+                            <div className="input-group-lg fr-btn mt-5 col d-block">
                                 <input type="text" className={`form-control ${(error.dateError ? "border-danger shadow-none":"shadow-none")}`} placeholder="mm/dd/yy" value={formData.dateOfBirth} name="dateOfBirth" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.dateError}</p>
                             </div>

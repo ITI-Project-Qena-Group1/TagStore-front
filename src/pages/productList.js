@@ -1,15 +1,12 @@
 import React from "react";
 import Navbar from "../Components/Navbar2"
 import { useState, useEffect } from "react";
-import { Button, Col, Container, Row, Card } from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import SideNavbar from "../Components/footer/sideNavbar";
 import './RegisterPage/RegisterForm.css';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { setProducts } from "../redux/action/productsAction";
 import ProductCard from "./productCard";
-import axios from "axios"
 import axiosInstance from "../axiosConfig/axiosInstance";
+import Footer from "../Components/footer/footer";
 
 export default function ProductList() {
     const [brand, setBrand] = useState({
@@ -40,7 +37,7 @@ export default function ProductList() {
     useEffect(() => {
         axiosInstance.get("/products").then((res)=>{
             console.log(res.data);
-            setProducts(res.data)
+            setProducts(res.data);
         }).catch((err)=>{
             console.log(err);
         })
@@ -71,6 +68,7 @@ export default function ProductList() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 }

@@ -11,7 +11,7 @@ export default function cartReducers(state = initialValue, action) {
             state.forEach((item) => {
                 if (item.id === action.payload) {
                     let x = state.indexOf(item)
-                    state.splice(x, 1)
+                    state.splice(x,1)
                 }
             })
             return state
