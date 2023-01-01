@@ -11,6 +11,8 @@ import { TbTruckDelivery , TbTruckReturn } from "react-icons/tb";
 import {FaTruckPickup} from "react-icons/fa";
 import { useParams } from 'react-router-dom';
 import axiosInstance from "../axiosConfig/axiosInstance";
+import langContext from '../context/LangContext';
+import TopNav from '../Components/TopNav';
 
 
 export default function ProductDetails() {
@@ -23,10 +25,31 @@ export default function ProductDetails() {
             console.log(res);
             setProduct(res.data)
         },[])
-        axiosInstance.patch(`/products/${params.id}`).then((res)=>{
-            
-        })
     })
+
+    const value = React.useContext(langContext);
+    let { selectedLang } = value.state;
+    let {
+        brand,
+        similarProducts,
+        EGP,
+        pormotions,
+        freeShipping,
+        enjoyInstallments,
+        landLine,
+        productDetails,
+        specifications,
+        keyFeatures,
+        deliveryAndReturns,
+        location,
+        doorDel,
+        deliveryTime,
+        pickStation,
+        pickTime,
+        returnPolicy,
+        returnPolicyDetails,
+        warranty,
+    } = value.state.lang;
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -34,8 +57,8 @@ export default function ProductDetails() {
 
     return (
         <>
-        <mainNavbar />
-            <div className="bg-light container">
+        <TopNav/>
+            <div className="bg-light container" {...(selectedLang=='en' ? {dir: 'ltr'} : {dir: 'rtl'})}>
                 <div className="d-md-flex d-sm-block">
                     <div className="col col-md-9">
                         <section className="d-md-flex d-sm-block bg-white">
@@ -48,31 +71,31 @@ export default function ProductDetails() {
                                     <AiOutlineHeart style={{ color: "#f68b1e", fontSize: "30px" }} />
                                 </div>
                                 <div className="">
-                                    <h6>Brand: <a href="#">XIAOMI</a> | <a href="#">Similar products from XIAOMI</a> </h6>
+                                    <h6>{brand}: <a href="#">XIAOMI</a> | <a href="#">{similarProducts} XIAOMI</a> </h6>
                                 </div>
                                 <div className="stars">
                                     <AiOutlineStar style={{ color: "#f68b1e", fontSize: "25px" }} /> <AiOutlineStar style={{ color: "#f68b1e", fontSize: "25px" }} /> <AiOutlineStar style={{ color: "#f68b1e", fontSize: "25px" }} /> <AiOutlineStar style={{ color: "#f68b1e", fontSize: "25px" }} /> <AiOutlineStar style={{ color: "#f68b1e", fontSize: "25px" }} />
                                 </div>
                                 <hr />
                                 <div className="">
-                                    <h2>EGP 15,999.00</h2>
+                                    <h2>{EGP} 15,999.00</h2>
                                     <p className="text-danger"><RiErrorWarningFill /> 1 units left</p>
                                 </div>
-                                <div className="">
+                                {/* <div className="">
                                     <a><AiFillPlusSquare style={{ fontSize: "40px", color: "#f68b1e", cursor: "pointer" }} /></a> 2 {" "} <a><AiFillMinusSquare style={{ fontSize: "40px", color: "#f68b1e", cursor: "pointer" }} /></a>
                                 </div>
-                                <button style={{backgroundColor: "#f68b1e" , color:"white" , fontSize:"18px"}} className='btn mt-3 col-4'>Add to cart</button>
+                                <button style={{backgroundColor: "#f68b1e" , color:"white" , fontSize:"18px"}} className='btn mt-3 col-4'>Add to cart</button> */}
                                 <hr />
                                 <div>
-                                    <h5>PORMOTIONS</h5>
-                                    <h6><FaPaperPlane style={{ color: "#f68b1e", fontSize: "20px" }} /> <a href="#">Free Shipping Nationwide, on orders above 75 EGP</a></h6>
-                                    <h6><GiAlliedStar style={{ color: "#f68b1e", fontSize: "20px" }} /> <a href="#">Enjoy installments from 6 months to 60 months with valU.</a></h6>
-                                    <h6><RiSecurePaymentLine style={{ color: "#f68b1e", fontSize: "20px" }} /> <a href="#">Your landline bill is available now, pay it from here in seconds!</a></h6>
+                                    <h5>{pormotions}</h5>
+                                    <h6><FaPaperPlane style={{ color: "#f68b1e", fontSize: "20px" }} /> <a href="#">{freeShipping}</a></h6>
+                                    <h6><GiAlliedStar style={{ color: "#f68b1e", fontSize: "20px" }} /> <a href="#">{enjoyInstallments}</a></h6>
+                                    <h6><RiSecurePaymentLine style={{ color: "#f68b1e", fontSize: "20px" }} /> <a href="#">{landLine}</a></h6>
                                 </div>
                             </div>
                         </section>
                         <section className="product-Details mt-3 bg-white col d-none d-md-block">
-                            <h2>Product Details</h2>
+                            <h2>{productDetails}</h2>
                             <hr />
                             <img src="https://eg.jumia.is/cms/external/pet/XI606MP1A9LZHNAFAMZ/9ec8fce78d86bdc7ea4ad5b2eb4da58b.jpg" style={{ width: "100%", height: "auto" }} />
                             <img className="mt-3" src="https://eg.jumia.is/cms/external/pet/XI606MP1A9LZHNAFAMZ/9fb61b77ee5f836d8241d21dbff5235b.jpg" style={{ width: "100%", height: "auto" }} />
@@ -87,12 +110,12 @@ export default function ProductDetails() {
                             <img className="mt-3" src="https://eg.jumia.is/cms/external/pet/XI606MP1A9LZHNAFAMZ/b82af0708c6aea8f70a1fcdbd648e876.jpg" style={{ width: "100%", height: "auto" }} />
                         </section>
                         <section className="specifications mt-3 bg-white col">
-                            <h2>Specifications</h2>
+                            <h2>{specifications}</h2>
                             <hr />
                             <div className="d-flex">
                                 <div className="col-6">
                                     <ul class="list-group">
-                                        <li class="list-group-item">KEY FEATURES</li>
+                                        <li class="list-group-item">{keyFeatures}</li>
                                         <ul class="list-group-item">
                                             <li style={{ listStyle: "square" }}>Brand : Xiaomi</li>
                                             <li style={{ listStyle: "square" }}>Color :  Meteorite Gray</li>
@@ -113,7 +136,7 @@ export default function ProductDetails() {
                                 </div>
                                 <div className="col-6">
                                     <ul class="list-group">
-                                        <li class="list-group-item">SPECIFICATIONS</li>
+                                        <li class="list-group-item">{specifications}</li>
                                         <ul class="list-group-item">
                                             <li> <span style={{ fontWeight: "bolder" }}>SKU:</span> XI606MP1A9LZHNAFAMZ</li>
                                             <li> <span style={{ fontWeight: "bolder" }}>Model:</span> 11T Pro</li>
@@ -128,9 +151,9 @@ export default function ProductDetails() {
                         </section>
                     </div>
                     <div className="col col-md-3 bg-white">
-                        <h5 className='mt-3' style={{ fontWeight: "bold" }}>DELIVERY & RETURNS</h5>
+                        <h5 className='mt-3' style={{ fontWeight: "bold" }}>{deliveryAndReturns}</h5>
                         <hr />
-                        <label><h5>Choose your location</h5></label>
+                        <label><h5>{location}</h5></label>
                         <select name="gender" className="form-control shadow-none text-center">
                             <option value="Giza" >Giza</option>
                             <option value="Cairo" >Cairo</option>
@@ -149,7 +172,7 @@ export default function ProductDetails() {
                                 <div className="mx-2"><TbTruckDelivery style={{ fontSize: "50px" }} /></div>
                                 <div>
                                     <div className='d-flex justify-content-between'>
-                                        <p style={{ fontWeight: "bold" }}>Door Delivery</p>
+                                        <p style={{ fontWeight: "bold" }}>{doorDel}</p>
                                         <a variant="primary" onMouseOver={()=>handleShow()}>
                                             Details
                                         </a>
@@ -157,12 +180,11 @@ export default function ProductDetails() {
                                     <div>
                                         <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
                                             <Modal.Header closeButton>
-                                                <Modal.Title>Delivery & Shipping</Modal.Title>
+                                                <Modal.Title>details</Modal.Title>
                                             </Modal.Header>
                                             <Modal.Body>
                                                 <div>
-                                                    Delivery time starts from the day you place your order to the day one of our associates makes a first attempt to deliver to you.
-                                                    Delivery will be attempted 2 times over 5 days (9.00 am to 6.00 pm) after which the item will be cancelled, if you are unreachable or unable to receive the order.
+                                                    {deliveryTime}
                                                 </div>
                                                 <p className='mt-3' style={{ fontWeight: "bold", color: "gray" }}>DELIVERY FEE DETAILS</p>
                                                 <div className='d-flex justify-content-between'>
@@ -186,7 +208,7 @@ export default function ProductDetails() {
                                 <div className="mx-2"><FaTruckPickup style={{ fontSize: "50px" }} /></div>
                                 <div>
                                     <div className='d-flex justify-content-between'>
-                                        <p style={{ fontWeight: "bold" }}>Pickup Station</p>
+                                        <p style={{ fontWeight: "bold" }}>{pickStation}</p>
                                         <a variant="primary" onClick={()=>handleShow()}>
                                             Details
                                         </a>
@@ -220,7 +242,7 @@ export default function ProductDetails() {
                                         </Modal>
                                     </div>
                                     <p>Delivery EGP 10.83</p>
-                                    <p>Pickup by 12 December when you order within next 15hrs 55mins</p>
+                                    <p>{pickTime}</p>
                                 </div>
                             </div>
 
@@ -228,9 +250,9 @@ export default function ProductDetails() {
                                 <div className="mx-2"><TbTruckReturn style={{ fontSize: "50px" }} /></div>
                                 <div>
                                     <div className='d-flex justify-content-between'>
-                                        <p style={{ fontWeight: "bold" }}>Return Policy</p>
+                                        <p style={{ fontWeight: "bold" }}>{returnPolicy}</p>
                                     </div>
-                                    <p>Free return within the legal return period from 14 to 30 days, and if they meet the terms & conditions, For more details about return policy.<a href='#'>See more</a> </p>
+                                    <p>{returnPolicyDetails}<a href='#'>See more</a> </p>
                                 </div>
                             </div>
 
@@ -238,7 +260,7 @@ export default function ProductDetails() {
                                 <div className="mx-2"><RiShieldStarFill style={{ fontSize: "50px" }} /></div>
                                 <div>
                                     <div className='d-flex justify-content-between'>
-                                        <p style={{ fontWeight: "bolder" }}>Warranty</p>
+                                        <p style={{ fontWeight: "bolder" }}>{warranty}</p>
                                     </div>
                                     <p>Without Warranty</p>
                                 </div>

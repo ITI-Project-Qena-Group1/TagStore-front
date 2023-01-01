@@ -29,7 +29,7 @@
     height: 34px !important;
 }
 
-.btn-outline-light:hover {
+.btn-outline-light:hover{
     border-color: #f68b1e !important;
     color: #f68b1e !important;
     outline: 0 !important;

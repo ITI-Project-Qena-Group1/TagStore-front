@@ -34,12 +34,6 @@ export default function ProductCard(props) {
         props.changed(false)
     }
 
-    const delfromcart = () => {
-        dispatch((delFromCart(props.id)));
-        setCart(false);
-        props.changed(false)
-    }
-
     return <>
         <div className="mx-1" style={{ width: '15rem' }}>
             <Card className="productlist mt-3">
@@ -112,7 +106,7 @@ export default function ProductCard(props) {
                         <span> 1 </span>
                         <button type="button" className="btn r-btn fs-3"> - </button>
                     </div>} */}
-                    <button onClick={cart ? delfromcart : addtocart} type="button" className="btn r-btn w-100"><FaCartPlus clasName="me-2 text-light" style={{ color: cart ? "black" : "white" }} /> Add to cart</button>
+                    <button onClick={addtocart} type="button" className="btn r-btn w-100"><FaCartPlus clasName="me-2 text-light" style={{ color: cart ? "black" : "white" }} /> Add to cart</button>
                     </div>
                 </div>
             </Card>

@@ -1,6 +1,7 @@
 import React ,{useState} from "react";
 import './RegisterForm.css'
 import { GiAlliedStar } from 'react-icons/gi'
+import langContext from "../../context/LangContext";
 
 
 
@@ -20,6 +21,19 @@ export default function PersDetails({formData , setFormData}) {
             setFormData({...formData , gender:evt.target.value})
         }
     }
+
+    const value = React.useContext(langContext);
+    let { selectedLang } = value.state;
+    let {
+        alomstThere,
+        gender,
+        male,
+        female,
+        terms,
+        personalDetails
+    } = value.state.lang;
+
+
     return (
         <>
             <section className="mt-5">
@@ -29,24 +43,24 @@ export default function PersDetails({formData , setFormData}) {
                             <div className="row">
                                 <div className="col text-center">
                                     <h1><GiAlliedStar className="r-icon" /></h1>
-                                    <h4>Personal details</h4>
-                                    <p style={{fontSize:"18px"}}>Almost there... Just a few more details.</p>
+                                    <h4>{personalDetails}</h4>
+                                    <p style={{fontSize:"18px"}}>{alomstThere}</p>
                                 </div>
                             </div>
                             <div className="input-group input-group-lg col mt-5">
                                 <select required className="btn btn-light col" name="gender" value={formData.gender} onChange={(e)=>handleChange(e)}>
-                                    <option value="none" selected>Gender</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
+                                    <option value="none" selected>{gender}</option>
+                                    <option value="male">{male}</option>
+                                    <option value="female">{female}</option>
                                 </select>
                             </div>
-                            <div className="input-group input-group-lg fr-btn mt-5 col d-block">
+                            <div className="input-group-lg fr-btn mt-5 col d-block">
                                 <input type="text" className={`form-control ${(error.dateError ? "border-danger shadow-none":"shadow-none")}`} placeholder="mm/dd/yy" value={formData.dateOfBirth} name="dateOfBirth" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.dateError}</p>
                             </div>
 
                             <div class="container mt-5 d-flex text-align-center">
-                                <input required type="checkbox" id="acceptTC" name="acceptTC" className="mx-2"/> I read and consented to the <a href="/interaction/jwBBNyXSN92SM20UjSRig/en-eg/terms-and-conditions" target="_blank">Terms and Conditions</a>
+                                <input required type="checkbox" id="acceptTC" name="acceptTC" className="mx-2"/>{terms}<a href="/interaction/jwBBNyXSN92SM20UjSRig/en-eg/terms-and-conditions" target="_blank"></a>
                             </div>
                         </div>
                     </div>

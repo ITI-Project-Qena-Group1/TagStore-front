@@ -1,10 +1,17 @@
 import React from "react";
 import './RegisterForm.css'
 import { GiAlliedStar } from 'react-icons/gi'
+import langContext from "../../context/LangContext";
 
 
 
 export default function CreatedAcc({formData , setFormData}) {
+
+    const value = React.useContext(langContext);
+    let { selectedLang } = value.state;
+    let {
+        created
+    } = value.state.lang;
     return (
         <>
             <section className="mt-5">
@@ -14,7 +21,7 @@ export default function CreatedAcc({formData , setFormData}) {
                             <div className="row">
                                 <div className="col text-center">
                                     <h1><GiAlliedStar className="r-icon" /></h1>
-                                    <h4>Your Account has been Created</h4>
+                                    <h4>{created}</h4>
                                 </div>
                             </div>
                         </div>

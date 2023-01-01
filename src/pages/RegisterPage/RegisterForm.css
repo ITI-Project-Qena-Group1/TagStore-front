@@ -12,10 +12,10 @@
 }
 
 .f-btn{
-    background-color:#f68b1e ;
-    color: white;
-    font-weight: bolder;
-    font-size: 20px;
+    background-color:#f68b1e !important;
+    color: white !important;
+    font-weight: bolder!important;
+    font-size: 20px !important;
 }
 
 .face-btn{
@@ -24,8 +24,8 @@
 }
 
 .l-ancor{
-    color: #f68b1e;
-    box-shadow: none;
+    color: #f68b1e !important;
+    box-shadow: none !important;
 }
 
 .face-icon{
@@ -41,7 +41,7 @@
 }
 
 .card:hover button{
-    display: inline-block !important;
+    display: inline-block !important ;
 }
 
 .card:hover{
@@ -50,5 +50,5 @@
 }
 
 .form-control:focus{
-    border-color: #f68b1e;
+    border-color: #f68b1e !important;
 }

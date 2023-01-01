@@ -1,6 +1,8 @@
 import React , {useState} from "react";
 import './RegisterForm.css'
 import { GiAlliedStar } from 'react-icons/gi'
+import langContext from "../../context/LangContext"; 
+
 
 
 
@@ -45,6 +47,17 @@ export default function PersInfo({formData , setFormData}) {
             setError({...error,perfixNumberError:(evt.target.value.length == 0)?"Required": perfixNumber.test(evt.target.value)?"":"Wrong number"})
         }
     }
+    
+    const value = React.useContext(langContext);
+    let { selectedLang } = value.state;
+    let {
+        personalDetails,
+        NeedPersonalDetails,
+        firstName,
+        middleName,
+        lastName,
+        phoneNumber
+    } = value.state.lang;
 
     return (
         <>
@@ -55,32 +68,32 @@ export default function PersInfo({formData , setFormData}) {
                             <div className="row">
                                 <div className="col text-center">
                                     <h1><GiAlliedStar className="r-icon" /></h1>
-                                    <h4>Personal details</h4>
-                                    <p style={{fontSize:"18px"}}>We just need you to fill in some details.</p>
+                                    <h4>{personalDetails}</h4>
+                                    <p style={{fontSize:"18px"}}>{NeedPersonalDetails}</p>
                                 </div>
                             </div>
-                            <div className="input-group input-group-lg fr-btn col d-block">
-                                <input type="text"  className={`form-control ${(error.fNameError ? "border-danger shadow-none":"shadow-none")}`} placeholder="First Name*" value={formData.firstName}  name="firstName" onChange={(e)=>handleChange(e)}/>
+                            <div className="input-group-lg fr-btn col d-block">
+                                <input type="text"  className={`${selectedLang=="en"?"text-start ps-2":"text-end pe-2"} form-control ${(error.fNameError ? "border-danger shadow-none":"shadow-none")}`} placeholder={firstName} value={formData.firstName}  name="firstName" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.fNameError}</p>
                             </div>
-                            <div className="input-group input-group-lg fr-btn mt-4 col d-block">
-                                <input type="text"  className={`form-control ${(error.mNameError ? "border-danger shadow-none":"shadow-none")}`} placeholder="Middle Name" value={formData.middleName} name="middleName" onChange={(e)=>handleChange(e)}/>
+                            <div className="input-group-lg fr-btn mt-4 col d-block">
+                                <input type="text"  className={`${selectedLang=="en"?"text-start ps-2":"text-end pe-2"} form-control ${(error.mNameError ? "border-danger shadow-none":"shadow-none")}`} placeholder={middleName} value={formData.middleName} name="middleName" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.mNameError}</p>
                             </div>
 
-                            <div className="input-group input-group-lg fr-btn mt-4 col d-block">
-                                <input type="text"  className={`form-control ${(error.lNameError ? "border-danger shadow-none":"shadow-none")}`} placeholder="Last Name*" value={formData.lastName} name="lastName" onChange={(e)=>handleChange(e)}/>
+                            <div className="input-group-lg fr-btn mt-4 col d-block">
+                                <input type="text"  className={`${selectedLang=="en"?"text-start ps-2":"text-end pe-2"} form-control ${(error.lNameError ? "border-danger shadow-none":"shadow-none")}`} placeholder={lastName} value={formData.lastName} name="lastName" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.lNameError}</p>
                             </div>
 
                             <div className="d-flex">
-                                <div className="d-block col-3 input-group input-group-lg fr-btn mt-4 col ">
+                                <div className="d-block col-3 input-group-lg fr-btn mt-4 col ">
                                     <input type="text"  className={`form-control ${(error.perfixNumberError ? "border-danger shadow-none":"shadow-none")}`} placeholder="+20" value={formData.perfixNumber} name="perfixNumber" onChange={(e)=>handleChange(e)}/>
                                     <p className='text-danger mt-2 mx-2'>{error.perfixNumberError}</p>
                                 </div>
 
-                                <div className="d-block col-9 input-group input-group-lg fr-btn mt-4 col ">
-                                    <input type="text"  className={`form-control ${(error.phoneNumberError ? "border-danger shadow-none":"shadow-none")}`} placeholder="Phone Number*" value={formData.phoneNumber} name="phoneNumber" onChange={(e)=>handleChange(e)}/>
+                                <div className="d-block col-9 input-group-lg fr-btn mt-4 col ">
+                                    <input type="text"  className={`${selectedLang=="en"?"text-start ps-2":"text-end pe-2"} form-control ${(error.phoneNumberError ? "border-danger shadow-none":"shadow-none")}`} placeholder={phoneNumber} value={formData.phoneNumber} name="phoneNumber" onChange={(e)=>handleChange(e)}/>
                                     <p className='text-danger mt-2 mx-2'>{error.phoneNumberError}</p>
                                 </div>
 

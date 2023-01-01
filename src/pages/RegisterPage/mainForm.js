@@ -6,6 +6,7 @@ import PersDetails from "./personalDetails";
 import CreatedAcc from "./CreatedAccount";
 import { GrFacebookOption } from 'react-icons/gr'
 import Password from "./password";
+import langContext from "../../context/LangContext"; 
 
 
 
@@ -21,7 +22,7 @@ export default function MainForm() {
         perfixNumber: "",
         phoneNumber: "",
         dateOfBirth: "",
-        gender:""
+        gender: ""
     });
 
     const displayPage = () => {
@@ -38,47 +39,53 @@ export default function MainForm() {
         }
     }
 
+    const value = React.useContext(langContext);
+    let { selectedLang } = value.state;
+    let {
+        continueBTN,
+        submit,
+        goToHome,
+        logByFaceBook,
+        forSupport
+    } = value.state.lang;
+
     return (
         <>
             <div className="form">
                 <div className="form-container">
-                    <div className="body">
+                    <div className="container col-8">
                         {displayPage()}
-                    </div>
-                </div>
-                <div className="form-container">
-                    <div className="container">
                         <div className="d-flex justify-content-center mt-5">
-                            {page < 3 ?<button onClick={() => {
+                            {page < 3 ? <button onClick={() => {
                                 setPage((currentPage) => currentPage + 1)
                             }}
-                                className="btn mt-2 f-btn" style={{width:"525px"}}>Continue
-                            </button> 
+                                className="btn mt-2 f-btn" style={{ width: "470px" }}>{continueBTN}
+                            </button>
 
-                            : page == 3 ? <button onClick={() => {
-                                setPage((currentPage) => currentPage + 1)
-                                console.log(formData);
-                            }}
-                                className="btn mt-2 f-btn" style={{width:"525px"}}>submit
-                            </button>
-                            : page >3 && <button onClick={() => {
-                                setPage((currentPage) => currentPage + 1)
-                            }}
-                                className="btn mt-2 f-btn" style={{width:"525px"}}>Go to Home page
-                            </button>
+                                : page == 3 ? <button onClick={() => {
+                                    setPage((currentPage) => currentPage + 1)
+                                    console.log(formData);
+                                }}
+                                    className="btn mt-2 f-btn" style={{ width: "470px" }}>{submit}
+                                </button>
+                                    : page > 3 && <button onClick={() => {
+                                        setPage((currentPage) => currentPage + 1)
+                                    }}
+                                        className="btn mt-2 f-btn" style={{ width: "470px" }}>{goToHome}
+                                    </button>
                             }
                         </div>
                         {page == 0 && <div className="d-flex justify-content-center mt-5" >
-                            <button className="btn btn-primary face-btn" style={{width:"525px"}}>
-                                <GrFacebookOption className="face-icon"/> Log in With Facebook 
+                            <button className="btn btn-primary face-btn" style={{ width: "470px" }}>
+                                <GrFacebookOption className="face-icon" /> {logByFaceBook}
                             </button>
                         </div>}
-                    </div>
-                    {page <=3 &&<div className="mt-5 container">
-                            <div className="col d-flex justify-content-center">
-                                <p className="text-center w-50">For further support, you may visit the Help Center or contact our customer service team.</p>
+                        {page <=3 &&<div className="mt-5 container d-flex justify-content-center">
+                            <div className="col-6">
+                                <p className="text-center">{forSupport}</p>
                             </div>
                     </div>}
+                    </div>
                 </div>
             </div>
         </>

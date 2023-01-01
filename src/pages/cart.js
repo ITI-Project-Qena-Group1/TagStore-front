@@ -1,23 +1,29 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Button, FormControl, Modal } from "react-bootstrap";
+import { Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { MdDeleteOutline } from "react-icons/md"
 import { AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai"
-import { RiErrorWarningFill } from "react-icons/ri"
-import ProductCard from "./productCard";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../Components/Navbar2";
+import { delFromCart } from "../redux/action/productsAction";
 
 export default function Cart() {
 
     const cartProducts = useSelector(state => state.cart);
-    const [change, setchange] = useState([])
+    const [cart, setCart] = useState();
+    const [change, setchange] = useState([]);
+    const dispatch = useDispatch();
+
+    const delfromcart = (id) => {
+        dispatch((delFromCart(id)));
+        setCart(false);
+    }
 
 
     useEffect(() => {
         // console.log(" item deleted ")
-    }, [cartProducts , change]);
+    }, [cartProducts , change ,cart]);
 
 
     function handleChange(e) {
@@ -41,7 +47,8 @@ export default function Cart() {
                 </div>
                 <div className="row mt-3 ">
                     <div className="col-12 d-flex justify-content-center">
-                        <Button
+                        <Link
+                            className="btn"
                             type="button"
                             style={{
                                 backgroundColor: "#f68b1e",
@@ -51,10 +58,11 @@ export default function Cart() {
                                 marginLeft: '10px'
                             }}
                             variant="contained"
+                            to={"/product"}
                         >
                             {" "}
                             Start Shopping
-                        </Button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -85,17 +93,17 @@ export default function Cart() {
                                         </div>
                                         <div className="m-3 d-flex justify-content-start" style={{ display: "flex", justifyContent: "space-around" }}>
                                             <div className="btn text-center" style={{ color: "#f68b1e", cursor: "pointer" }}>
-                                                <MdDeleteOutline style={{ fontSize: "30px" }} /> <span style={{ fontSize: "18px" }}>REMOVE</span>
+                                                <MdDeleteOutline onClick={()=>delfromcart(item.id)} onChange={(e)=>handleChange(e)} style={{ fontSize: "30px" }} /> <span style={{ fontSize: "18px" }}>REMOVE</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="mx-5">
+                            {/* <div className="mx-5">
                                 <div className="d-flex align-items-center">
                                     <a><AiFillPlusSquare style={{ fontSize: "40px", color: "#f68b1e", cursor: "pointer" }} /></a> 2 {" "} <a><AiFillMinusSquare style={{ fontSize: "40px", color: "#f68b1e", cursor: "pointer" }} /></a>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>)
                     })}

@@ -1,16 +1,14 @@
 import React from "react";
 import Navbar from "../Components/Navbar2"
 import { useState, useEffect } from "react";
-import { Button, Col, Container, Row, Card } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import SideNavbar from "../Components/footer/sideNavbar";
 import './RegisterPage/RegisterForm.css';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { setProducts } from "../redux/action/productsAction";
 import ProductCard from "./productCard";
-import axios from "axios"
 import axiosInstance from "../axiosConfig/axiosInstance";
 import { useLocation, useParams } from "react-router-dom";
+import Footer from "../Components/footer/footer";
+import langContext from "../context/LangContext";
 
 export default function ProductList() {
     const [brand, setBrand] = useState({
@@ -50,6 +48,9 @@ export default function ProductList() {
         })
     },[]);
 
+    const value = React.useContext(langContext);
+    let { selectedLang } = value.state;
+
     // useEffect(() => {
     //     axiosInstance.get(`/product?category=${location.search.split('=')[1]}`).then((res)=>{
     //         console.log(res.data);
@@ -68,8 +69,8 @@ export default function ProductList() {
             <Navbar/>
             <div className="bg-light container">
                 <div className="container-fluid">
-                    <div className="container-fluid mt-4 d-flex justify-content-evenly">
-                        <div className="col-3 bg-white"> <SideNavbar className="" brandProp={brand} catProp={cat} /> </div>
+                    <div className="container-fluid mt-4 d-flex justify-content-evenly" {...(selectedLang=='en' ? {dir: 'ltr'} : {dir: 'rtl'})}>
+                        <div className="col-3 bg-white" {...(selectedLang=='en' ? {dir: 'ltr'} : {dir: 'rtl'})}> <SideNavbar className="" brandProp={brand} catProp={cat} /> </div>
                         <div className="col-9 mx-3 bg-white">
                             <div className="container d-flex justify-content-between mt-3"> <h5>{cat.a}</h5> </div>
                             <Container> <hr /> </Container>
@@ -84,6 +85,7 @@ export default function ProductList() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 }

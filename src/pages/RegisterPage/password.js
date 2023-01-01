@@ -2,6 +2,7 @@ import React , {useState} from "react";
 import './RegisterForm.css'
 import { GiAlliedStar } from 'react-icons/gi'
 import { Link } from "react-router-dom";
+import langContext from "../../context/LangContext"; 
 
 
 export default function Password({ formData, setFormData }) {
@@ -25,6 +26,17 @@ export default function Password({ formData, setFormData }) {
             setError({...error,confirmPasswordError:(evt.target.value.length == 0)?"this field is required": confirmPassword === formData.password ?"":"password not match"})
         }
     }
+
+    const value = React.useContext(langContext);
+    let { selectedLang } = value.state;
+    let {
+        CreateAccount,
+        startToCreateAccount,
+        password,
+        confirmPassword,
+        edit
+    } = value.state.lang;
+
     return (
         <>
             <section className="mt-5">
@@ -34,22 +46,22 @@ export default function Password({ formData, setFormData }) {
                             <div className="row">
                                 <div className="col text-center">
                                     <h1><GiAlliedStar className="r-icon" /></h1>
-                                    <h4>Create your account</h4>
-                                    <p style={{fontSize:"18px"}}>Let's get started by creating your account. <br /> To keep your account safe, we need a strong password</p>
+                                    <h4>{CreateAccount}</h4>
+                                    <p style={{fontSize:"18px"}}>{startToCreateAccount}</p>
                                 </div>
                             </div>
                             <div class="input-group input-group-lg col mb-3">
                                 <input type="text" class="form-control" value={formData.email} disabled />
-                                <div class="input-group-append">
-                                    <Link class="input-group-text" id="basic-addon2">edit</Link>
+                                <div class="input-group-lg">
+                                    <Link class="input-group-text" id="basic-addon2" to={"/register"}>{edit}</Link>
                                 </div>
                             </div>
-                            <div className="input-group input-group-lg fr-btn mt-3 col d-block">
-                                <input type="text" className={`form-control ${(error.passwordError ? "border-danger shadow-none":"shadow-none")}`} placeholder="Password" value={formData.password} name="password" onChange={(e)=>handleChange(e)}/>
+                            <div className="input-group-lg fr-btn mt-3 col d-block">
+                                <input type="text" className={`${selectedLang=="en"?"text-start ps-2":"text-end pe-2"} form-control ${(error.passwordError ? "border-danger shadow-none":"shadow-none")}`} placeholder={password} value={formData.password} name="password" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.passwordError}</p>
                             </div>
-                            <div className="input-group input-group-lg fr-btn mt-3 col d-block">
-                                <input type="text" className={`form-control ${(error.confirmPasswordError ? "border-danger shadow-none":"shadow-none")}`} placeholder="Confirm Password" value={formData.confirmPassword} name="confirmPassword" onChange={(e)=>handleChange(e)}/>
+                            <div className="input-group-lg fr-btn mt-3 col d-block">
+                                <input type="text" className={`${selectedLang=="en"?"text-start ps-2":"text-end pe-2"} form-control ${(error.confirmPasswordError ? "border-danger shadow-none":"shadow-none")}`} placeholder={confirmPassword} value={formData.confirmPassword} name="confirmPassword" onChange={(e)=>handleChange(e)}/>
                                 <p className='text-danger mt-2 mx-2'>{error.confirmPasswordError}</p>
                             </div>
                         </div>
