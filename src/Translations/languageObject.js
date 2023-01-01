@@ -62,9 +62,30 @@ let languagesObject = {
         <p>&nbsp;</p>
         
          `,
+         welcomBack:'Welcome back',
+         LogBackIntoYourJumiaAccount:'Log back into your Jumia account',
+         phoneNumber:'phone number',
+         EnterYourPhoneNumber:'Enter Your Phone Number',
+         password:'password',
+         showpassword:'show password',
+         login:'login',
 
 
     },
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
     ar: {
         topNavSellerLink: "بيع علي تاج",
         NavbarSearchPlaceholder: "البحث عن منتجات، والعلامات التجارية والأقسام",
@@ -143,6 +164,14 @@ let languagesObject = {
             <li>فوري.</li>
             <li>تطبيق تاج باي.</li>
         </ul>`,
+
+   welcomBack:'مرحبا بك',
+   LogBackIntoYourJumiaAccount:'قم بتسجيل الدخول مرة أخرى إلى حساب جوميا الخاص بك',
+   phoneNumber:'رقم التليفون',
+   EnterYourPhoneNumber:'أدخل رقم هاتفك',
+   password:'كلمه السر',
+   showpassword:'عرض كلمة المرور',
+   login:'تسجيل الدخول',
         
     }
 }
