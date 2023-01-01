@@ -28,10 +28,6 @@ export default function Cart() {
     const delfromcart = (id) => {
         dispatch((delFromCart(id)));
     }
-    const raisequantity = (id) =>{
-        setQuantity(quantity+1)
-    }
-
     return (
         <>
         <Navbar/>
@@ -101,7 +97,7 @@ export default function Cart() {
                             </div>
                             <div className="mx-5">
                                 <div className="d-flex align-items-center">
-                                    <a><AiFillPlusSquare onClick={()=>raisequantity(item.id)} style={{ fontSize: "40px", color: "#f68b1e", cursor: "pointer" }} /></a> {quantity}{" "} <a><AiFillMinusSquare style={{ fontSize: "40px", color: "#f68b1e", cursor: "pointer" }} /></a>
+                                    <a><AiFillPlusSquare style={{ fontSize: "40px", color: "#f68b1e", cursor: "pointer" }} /></a> {quantity}{" "} <a><AiFillMinusSquare style={{ fontSize: "40px", color: "#f68b1e", cursor: "pointer" }} /></a>
                                 </div>
                             </div>
                         </div>
