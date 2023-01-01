@@ -62,9 +62,35 @@ let languagesObject = {
         <p>&nbsp;</p>
         
          `,
-
-
+        howCanWeHelpYou: "How can we help you?",
+        descibeYourIssue: "Describe your Issue",
+        PlaceTrackOrder: "Place & Track Order",
+        OrderCancellation: "Order Cancellation",
+        ReturnsRefunds: "Returns & Refunds",
+        PaymentJumiaAccount: "Payment & Jumia Account",
+        ChooseYourDesiredServices: "Choose Your Desired Services",
+        HowtoShoponJumia: "How to Shop on Jumia?",
+        Howtotrackyourorder: "How to track your order",
+        DeliveryTimelines: "Delivery Timelines",
+        FAQS: "FAQS",
+        Stepstocancelyourorder: "Steps to cancel your order",
+        ReturnPolicy: "Return Policy",
+        HowtoReturnyourorder: "How to Return your order",
+        RefundPolicy: "Refund Policy",
+        WarrantyServiceCenter: "Warranty & Service Center",
+        JumiaPay: "Jumia Pay",
+        Cashondelivery: "Cash on delivery",
+        Vouchers: "Vouchers",
+        Howtochooseyourpayment: "How to choose your payment",
+        OtherServices: "Other Services",
+        learnmore: "learn more",
+        Howtocancelyourorder: "How to cancel your order",
+        FrequentlyAskedQuestions: "Frequently Asked Questions",
+        CanIcancelmyorder: "Can I cancel my order?",
     },
+
+
+
     ar: {
         topNavSellerLink: "بيع علي تاج",
         NavbarSearchPlaceholder: "البحث عن منتجات، والعلامات التجارية والأقسام",
@@ -143,8 +169,31 @@ let languagesObject = {
             <li>فوري.</li>
             <li>تطبيق تاج باي.</li>
         </ul>`,
-        
-    }
-}
+        howCanWeHelpYou: "كيف يمكننا مساعدتك؟",
+        descibeYourIssue: "وصف مشكلتك",
+        PlaceTrackOrder: "مكان وتتبع الطلب",
+        OrderCancellation: "طلب الغاء",
+        ReturnsRefunds: "العوائد والمردودات",
+        PaymentJumiaAccount: "الدفع وحساب جوميا",
+        ChooseYourDesiredServices: "اختر الخدمات التي تريدها",
+        PaymentJumiaAccount: "الدفع وحساب جومي",
+        HowtoShoponJumia: "كيف تتسوق على جوميا؟",
+        Howtotrackyourorder: "كيفية تتبع طلبك",
+        DeliveryTimelines: "مواعيد التسليم",
+        FAQS: "أسئلة وأجوبة",
+        Stepstocancelyourorder: "خطوات إلغاء طلبك",
+        ReturnPolicy: "سياسة الاسترجاع",
+        HowtoReturnyourorder: "كيفية إرجاع طلبك",
+        RefundPolicy: "سياسة الاسترجاع",
+        WarrantyServiceCenter: "مركز الضمان والخدمة",
+        JumiaPay: "مدفوعات جوميا",
+        Cashondelivery: "الدفع عند الاستلام",
+        Vouchers: "القسائم",
+        Howtochooseyourpayment: "كيفية اختيار الدفع الخاص بك ",
+        OtherServices: "خدمات أخرى",
+        learnmore: "تعلم المزيد",
+    },
 
-export default languagesObject
+};
+
+export default languagesObject;

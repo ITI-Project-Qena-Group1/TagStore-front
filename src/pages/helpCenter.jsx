@@ -1,10 +1,37 @@
 import React, { Component, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import "./helpCenter.css";
-import Navbar from '../Components/Navbar2';
-
+import Navbar from "../Components/Navbar2";
+import langContext from "../context/LangContext";
+import TopNav from "../Components/TopNav";
 
 const HelpCenter = () => {
+  const value = React.useContext(langContext);
+  let { selectedLang } = value.state;
+  let {
+    howCanWeHelpYou,
+    descibeYourIssue,
+    PlaceTrackOrder,
+    OrderCancellation,
+    ReturnsRefunds,
+    PaymentJumiaAccount,
+    ChooseYourDesiredServices,
+    HowtoShoponJumia,
+    Howtotrackyourorder,
+    DeliveryTimelines,
+    FAQS,
+    Stepstocancelyourorder,
+    ReturnPolicy,
+    HowtoReturnyourorder,
+    WarrantyServiceCenter,
+    JumiaPay,
+    Cashondelivery,
+    Vouchers,
+    Howtochooseyourpayment,
+    OtherServices,
+    learnmore,
+  } = value.state.lang;
+
   // const [show, setShow] = useState(false);
   // const handlehide = () => setShow(false);
   // const handleShow = () => setShow(true);
@@ -28,7 +55,7 @@ const HelpCenter = () => {
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div className="container text-align-center">
         <div>
           <div className="header">
@@ -39,7 +66,7 @@ const HelpCenter = () => {
           </div>
 
           <div className="text-center col-sm-10 mx-5 ">
-            <div className="my-3">How can we help you?</div>
+            <div className="my-3">{howCanWeHelpYou}</div>
 
             <div className="input-group pl-5 ml-5 col-sm-10 bg-transparent text-center">
               <div className="input-group-append">
@@ -52,7 +79,7 @@ const HelpCenter = () => {
                 type="search"
                 id="form12"
                 class="form-control"
-                placeholder="Descripe your issue"
+                placeholder={descibeYourIssue}
               />
             </div>
           </div>
@@ -69,7 +96,7 @@ const HelpCenter = () => {
                   height={"50px"}
                 />
               </a>
-              <div className="cat-txt">Place & Track Order</div>
+              <div className="cat-txt">{PlaceTrackOrder}</div>
             </div>
 
             <div className="col-sm-2">
@@ -84,7 +111,7 @@ const HelpCenter = () => {
                 />
               </a>
 
-              <div className="cat-txt">Order Cancellation</div>
+              <div className="cat-txt">{OrderCancellation}</div>
             </div>
 
             <div className="col-sm-2">
@@ -98,7 +125,7 @@ const HelpCenter = () => {
                   height={"50px"}
                 />
               </a>
-              <div className="cat-txt">Returns & Refunds</div>
+              <div className="cat-txt">{ReturnsRefunds}</div>
             </div>
 
             <div className="col-sm-2">
@@ -112,14 +139,14 @@ const HelpCenter = () => {
                   height={"50px"}
                 />
               </a>
-              <div className="cat-txt">Payment & Jumia Account</div>
+              <div className="cat-txt">{PaymentJumiaAccount}</div>
             </div>
           </div>
         </div>
 
         <div>
           <div className="py-5">
-            <h2>Choose Your Desired Services</h2>
+            <h2>{ChooseYourDesiredServices}</h2>
           </div>
 
           <div>
@@ -127,22 +154,22 @@ const HelpCenter = () => {
               <div className=" col-3  border rounded-4">
                 <div className="vertical-menu">
                   <a onMouseOver={() => handleService1()} href="#">
-                    Place & Track Order &gt;&gt;
+                    {PlaceTrackOrder} &gt;&gt;
                   </a>
                 </div>
                 <div className="vertical-menu">
                   <a onMouseOver={() => handleService2()} href="#">
-                    Order Cancellation &gt;&gt;
+                    {OrderCancellation} &gt;&gt;
                   </a>
                 </div>
                 <div className="vertical-menu">
                   <a onMouseOver={() => handleService3()} href="#">
-                    Returns & Refunds &gt;&gt;
+                    {ReturnsRefunds} &gt;&gt;
                   </a>
                 </div>
                 <div className="vertical-menu">
                   <a onMouseOver={() => handleService4()} href="#">
-                    Payment & Jumia Account &gt;&gt;
+                    {PaymentJumiaAccount} &gt;&gt;
                   </a>
                 </div>
               </div>
@@ -150,64 +177,64 @@ const HelpCenter = () => {
               <div className="Services col-6">
                 {service == 1 ? (
                   <div className="service">
-                    <h3>Place & Track Order</h3>
+                    <h3>{PlaceTrackOrder}</h3>
 
                     <div>
-                      <a href="">How to Shop on Jumia?</a>
+                      <a href="">{HowtoShoponJumia}</a>
                     </div>
                     <div>
-                      <a href="">How to track your order?</a>
+                      <a href="">{Howtotrackyourorder}</a>
                     </div>
                     <div>
-                      <a href="">Delivery Timelines</a>
+                      <a href="">{DeliveryTimelines}</a>
                     </div>
                   </div>
                 ) : service == 2 ? (
                   <div className="service">
-                    <h3>Order Cancelation</h3>
+                    <h3>{{ OrderCancellation }}</h3>
                     <div>
-                      <a href="">FAQS</a>
+                      <a href="">{FAQS}</a>
                     </div>
                     <div>
-                      <a href="">Steps to cancel your order</a>
+                      <a href="">{Stepstocancelyourorder}</a>
                     </div>
                   </div>
                 ) : service == 3 ? (
                   <div className="service">
-                    <h3>Returns & Refunds</h3>
+                    <h3>{ReturnPolicy}</h3>
 
                     <div>
-                      <a href="">Return Policy</a>
+                      <a href="">{ReturnPolicy}</a>
                     </div>
                     <div>
-                      <a href="">How to Return your oder?</a>
+                      <a href="">{HowtoReturnyourorder}</a>
                     </div>
                     <div>
-                      <a href="">Refund Policy</a>
+                      <a href="">{ReturnPolicy}</a>
                     </div>
                     <div>
-                      <a href="">FAQS</a>
+                      <a href="">{FAQS}</a>
                     </div>
                     <div>
-                      <a href="">Warranty & Service Center</a>
+                      <a href="">{WarrantyServiceCenter}</a>
                     </div>
                   </div>
                 ) : (
                   service == 4 && (
                     <div className="service">
-                      <h3>Payment & Jumia Account</h3>
+                      <h3>{PaymentJumiaAccount}</h3>
 
                       <div>
-                        <a href="">Jumia Pay</a>
+                        <a href="">{JumiaPay}</a>
                       </div>
                       <div>
-                        <a href="">Cash on delivery</a>
+                        <a href="">{Cashondelivery}</a>
                       </div>
                       <div>
-                        <a href="">Vouchers</a>
+                        <a href="">{Vouchers}</a>
                       </div>
                       <div>
-                        <a href="">How to choose your payment?</a>
+                        <a href="">{Howtochooseyourpayment}</a>
                       </div>
                     </div>
                   )
@@ -218,7 +245,7 @@ const HelpCenter = () => {
 
           <div className="text-center">
             <div className="my-4">
-              <h2 className="my-3">Other Services</h2>
+              <h2 className="my-3">{OtherServices}</h2>
             </div>
 
             <div className="row col-sm-12 py-5">
@@ -233,7 +260,7 @@ const HelpCenter = () => {
                   />
 
                   <div class="-cta">
-                    <button className="btn btn-light">learn more</button>
+                    <button className="btn btn-light">{learnmore}</button>
                   </div>
                 </a>
               </div>
@@ -249,7 +276,7 @@ const HelpCenter = () => {
                   />
 
                   <div class="-cta">
-                    <button className="btn btn-light">learn more</button>
+                    <button className="btn btn-light">{learnmore}</button>
                   </div>
                 </a>
               </div>
@@ -265,7 +292,7 @@ const HelpCenter = () => {
                   />
 
                   <div class="-cta">
-                    <button className="btn btn-light">learn more</button>
+                    <button className="btn btn-light">{learnmore}</button>
                   </div>
                 </a>
               </div>
@@ -281,7 +308,7 @@ const HelpCenter = () => {
                   />
 
                   <div class="-cta">
-                    <button className="btn btn-light">learn more</button>
+                    <button className="btn btn-light">{learnmore}</button>
                   </div>
                 </a>
               </div>
